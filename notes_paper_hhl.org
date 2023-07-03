@@ -1,0 +1,87 @@
+#+TITLE: Seminar_paper_overview
+
+
+* Gliederung
+
+1. Abstract
+2. Introduction
+   1. Classical Method
+   2. Quantum Mechanical Prerequisit
+3. Mathematical idea
+4. Algorithm walkthrough
+5. Discussion
+6. Conclusion
+
+
+
+
+
+
+
+
+
+* Email
+  - Wie mathematisch?
+
+  - Beispiel?
+  - Sachen wie QPE oder Fourier transformation erklären?
+  - Soll ich einfach eine Draft vom Inhaltsverzeichnis schicken????
+
+
+** Fragen
+  Ich hätte ein paar Fragen.
+  Ich habe versucht die Präsentation so gut wie möglich ohne Formeln und mathematische Erklärung zu machen, da ich davon ausgegangen bin, dass
+
+
+  Die Präsentation war eher dazu da
+
+** Text
+Liebes Seminar Team,
+
+ich habe den HHL-Algorithmus als Thema und hätte noch ein paar Fragen zur schriftlichen Ausarbeitung.
+
+In meiner Präsentation habe ich viele mathematische Erklärungen ausgelassen, da die Präsentation sonst zu lang und trocken geworden wäre.
+
+Mir war es wichtig, mich in der Präsentation auf die allgemeine Funktionsweise und Intuition des Algorithmus zu konzentrieren. Alles andere spezifischere sollte man ja in der Ausarbeitung nachlesen können so wie ich das verstanden habe.
+
+Mein Frage wäre jetzt, wie mathematisch und detailiert das ganze sein müsste.
+
+1) Soll ich beispielsweise einige mathematische Definitionen/Anforderungen im Voraus erklären? (Hermitische Matrix, Unitary, Entanglement, ...)
+
+2) Wäre eine detaillierte Durchrechnung mit einem einfachen Beispiel (ähnlich wie in der Präsentation) für das Verständnis nötig oder genügt es, die Schritte rein mathematisch zu erläutern (nur mit Formeln, ohne explizites Beispiel)?
+
+3) Wie sollte das Verhältnis zwischen formalen Erklärungen und der Auswertung/Laufzeitanalyse sein?
+
+4) Gibt es noch Punkte, die in meiner Präsentation gefehlt haben, die ich noch einbringen sollte?
+
+Ich danke Euch im Voraus für eure Unterstützung und freue Mich auf euer Feedback!
+
+Liebe Grüße,
+Alfred
+
+
+
+
+
+
+Liebes Seminar Team,
+
+ich hab den HHL Algorithmus als Thema und hätte noch ein paar Fragen zur schriftlichen Ausarbeitung.
+
+In meiner Präsentation habe sehr viel Mathematische Erklärungen weggelassen, da die Präsentation sonst viel zu lang trocken gewesen wäre.
+
+Mir war es in der Präsentation wichtig mich die allgemeine Funktionsweise und Intuition vom Algorithmus zu fokussieren. Alles andere spezifischere sollte man ja in der Ausarbeitung nachlesen können so wie ich das verstanden habe.
+
+Mein Frage wäre jetzt wie mathematisch und detailiert das ganze jetzt sein müsste.
+
+1) Soll ich zum Beispiel ein paar Mathematische Definitionen/Anforderungen im Vorhinein erklären? (Hermitische Matrix, Unitary, Entanglement,...)
+
+2) Wäre ein detailiertes durchrechnen mit einem einfachen Beispiel (ähnlich wie in der Präsentation) für das Verständnis nötig oder reicht es wenn ich die Schritte rein mathematisch durchgehen (nur mit Formeln ohne explizites Beispiel)?
+
+3) Wie soll das Verhältnis von Formalen Erklärungen zur Auswertung/Laufzeitanalye sein?
+
+4) Gibt es noch Punkte die in meiner Präsentation gefehlt haben die ich noch einbringen sollte?
+
+
+Liebe Grüße
+Name
