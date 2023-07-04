@@ -1,63 +1,78 @@
 
 #+TITLE: Text_hhl
 
-1. Idea/Overview of the algorihtm (1. ; 4.)
+\section{ Idea/Overview of the algorihtm }
+The following section will describe how the algorithm works in general.
+Then it will roughly sketch the steps of the algorthm.
+After that it will describe a short mathematical explanation to further increase understanding.
+\subsection{Problem statement}
+Given an NxN hamiltonian matrix A and a vector b, we want to solve for the vector x such that
 
-   The following section will describe how the algorithm works in general.
-   Then it will roughly sketch the steps of the algorthm.
-   After that it will describe a short mathematical explanation to further increase understanding.
+A \vec{x} = \vec{b}
 
-   a) Problem statement
-      Given an NxN hamiltonian matrix A and a vector b, we want to solve for the vector x such that
-      ...
-      This problem can be rewritten as
-      ...
+To solve for x the equation can be rewritten as
 
-      As described earlier the hermitian matrix A^-1 can also decomposed into its spectral decomposition. A can thus be written as a linear combination outer products of its eigenvectors ... ... weighted by its eigenvalues, lambda.
+\vec{x} = A^{-1}\vec{b}
 
-      This means that if we can find the eigenvalues and eigenvectors of A we can then solve the linear equation quite easily. Classical solutions involving spectral decomposition are not faster than other algorithm such as Gaussian Elimination [quelle]. But estimating eigenvalues and eingewerte can be performed quite efficiently by quantum techniques.
+As described earlier the hermitian matrix A^-1 can also decomposed into its spectral decomposition. A can thus be written as a linear combination outer products of its eigenvectors ... ... weighted by its eigenvalues, lambda.
+This means that if we can find the eigenvalues and eigenvectors of A we can then solve the linear equation quite easily. Classical solutions involving spectral decomposition are not faster than other algorithm such as Gaussian Elimination [quelle]. But estimating eigenvalues and eingewerte can be performed quite efficiently by quantum techniques.
 
-      In the quantum version the formula look like this.
-      ...
-      where |b> and |x> are the quantum state of the b and x vector respectively.
+In the quantum version the formula look like this.
+...
+where |b> and |x> are the quantum state of the b and x vector respectively.
+Note that |x> is just a quantum state. We can not read every element to achieve the x vector. But as mentioned earlier, we are only interested in an approximation of the expectation value of some operator on x.
 
-      Note that |x> is just a quantum state. We can not read every element to achieve the x vector. But as mentioned earlier, we are only interested in an approximation of the expectation value of some operator on x.
+\subsection{Quantum Circuit}
+\subsubsection{Registers}
+The figure above shows the schematic of a simple quantum circuit for the HHL algorithm.
+We have three registers which describe different sets of qubits in the quantum circuit.
+The b-register contains the b vector which is encoded into a quantum state |b>. After the whole HHL procedure is done the b-register will contain the solution state |x>.
+The c-register, oftentimes refered to as the clock-register, is used for the quantum phase estimation part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
+The a-register contains the ancilla qubit. It is used for the inversion of the eigenvalues and will be explained in detail later on.
 
-   b) Quantum Circuit
+\subsubsection{Phases}
+The procedure of the quantum circuit can be split into 4 phases:
+\begin{itemize}
+\item State preparation
+\item Quantum phase estimation (QPE)
+\item Inversion of eigenvalues
+\item Inverse quantum phase estimation (IQPE)
+\end{itemize}
 
-    Registers:
-      The figure above shows the schematic of a simple quantum circuit for the HHL algorithm.
-      We have three registers which describe different sets of qubits in the quantum circuit.
-      The b-register contains the b vector which is encoded into a quantum state |b>. After the whole HHL procedure is done the b-register will contain the solution state |x>.
+In the state preparation phase, the b vector will be encoded into a quantum state |b> and the A matrix will be encoded as a hamiltonian, which is a unitary operator
+U=eiAt into the QPE and IQPE operations.
+The Quantum phase estimation will then calculate the eigenvalues and eigenvectors of the A matrix.
+Then we invert the eigenvalues through rotary operations. Unfortunately, these operations have a probability to fail, as they are not unitary operators.
+The ancilla bit will either collapse to |0> or |1> for failure and success respectively.
+If the rotation is not successfull, the procedure has to be repeated.
+If the rotation was successfull we can continue the procedure.
 
-      The c-register, oftentimes refered to as the clock-register, is used for the quantum phase estimation part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
+\subsubsection{Mathematical Overview}
+We will now look at a mathematical overview of what is happening in the HHL algorihtm.
+We are given the matrix A. We will also assume that A is hermitian. If not we can write A as an hermitian like this.
 
-      The a-register contains the ancilla qubit. It is used for the inversion of the eigenvalues and will be explained in detail later on.
+A^\dagger = \begin{pmatrix} 0 & A \\ \overline{A^T}& 0 \end{pmatrix}
 
+As already mentioned the matrix can now be described as a linear combination of its outer products of its eigenvectors and its eigenvalues.
+As quantum states the formula look like this.
 
+A = \sum_{i=0}^{N-1} \lambda_i \ket{u_i}\bra{u_i}
 
-    Phases:
-      The procedure of the quantum circuit can be split into 4 phases:
-      Test
-      1. State preparation
-      2. Quantum phase estimation (QPE)
-      3. Inversion of eigenvalues
-      4. Inverse quantum phase estimation (IQPE)
+where u_i u_i are the outer products of A and \lambda_i are the eigenvalues of A and N is the size of the A matrix.
+The same goes for the inverse A-^1 which can be written down as such.
 
-      In the state preparation phase, the b vector will be encoded into a quantum state |b> and the A matrix will be encoded as a hamiltonian, which is a unitary operator
-      U=eiAt into the QPE and IQPE operations.
+A^{-1} = \sum_{i=0}^{N-1} \lambda_i^{-1} \ket{u_i}\bra{u_i}
 
-      The Quantum phase estimation will then calculate the eigenvalues and eigenvectors of the A matrix.
+Similary b can be expressed in the eigenbasis which are the eigenvectors of A like this
 
-      Then we invert the eigenvalues through rotary operations. Unfortunately, these operations have a probability to fail, as they are not unitary operators.
-      The ancilla bit will either collapse to |0> or |1> for failure and success respectively.
-      If the rotation is not successfull, the procedure has to be repeated.
-      If the rotation was successfull we can continue the procedure.
+\ket{b} = \sum_{j=0}^{N-1} b_j\ket{u_j}
 
+We now have all the tools to solve the equation by inserting the definition of A-1 and b into our original equation
 
-   c) The Overview
-      - A is Hamiltonian (if not Hamiltonian then ...)
-      - A can be split up outer spectral decomposition (eigenvectors and eigenvalues) ...
-      - same für A^-1 ...
-      - b can be written in the eigenbasis of A ...
-      - x can be written as...
+\ket{x} = A^{-1} \ket{b} = \left(\sum_{i=0}^{N-1} \lambda_i^{-1} \ket{u_i}\bra{u_i} \right) \left(\sum_{j=0}^{N-1} b_j\ket{u_j} \right)
+\ket{x}= \sum_{i=0}^{-1} \sum_{j=0}^{N-1} \lambda_i^{N-1} \ket{u_i}\bra{u_i} b_j\ket{u_j}
+\ket{x}= \sum_{i=0}^{N-1} \sum_{j=0}^{N-1} \lambda_i^{-1} b_j\ket{u_i}\braket{u_i| u_j}
+\ket{x} = \sum_{i=0}^{N-1} \sum_{j=0}^{N-1} \lambda_i^{-1} b_j\ket{u_i}\delta_{ij}
+\ket{x} =  A^{-1} \ket{b} = \sum_{i=0}^{N-1} \lambda_i^{-1} b_j\ket{u_j}
+
+As we can see we can encode the solution of our linear system into our quantum system quite easily. That means the x state can be achieved by calculating the eigenvectors and eigenvalues of A. Then describing b in the eigenbasis of A and finally multiplying it by the inverse eigenvalues. The result of that calculation will be stored in the b-register

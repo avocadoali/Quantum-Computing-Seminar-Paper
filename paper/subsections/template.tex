@@ -1,41 +1,3 @@
-\documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
-\usepackage{graphicx}
-\usepackage{textcomp}
-\usepackage{xcolor}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-\begin{document}
-
-\title{Quantum Algorithm for Linear Systems of Equations\\
-}
-
-\author{\IEEEauthorblockN{Alfred Nguyen}
-\IEEEauthorblockA{\textit{Department of Computer Science} \\
-\textit{Technical University of Munich} \\
-05748 Garching, Bavaria\\
-alfred.nguyen@outlook.com}
-}
-
-\maketitle
-
-\begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
-\end{abstract}
-
-\begin{IEEEkeywords}
-component, formatting, style, styling, insert
-\end{IEEEkeywords}
-
-\section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
 
 \section{Ease of Use}
 
@@ -96,71 +58,6 @@ citations without having to go through the file line by line.
 Please don't use the \verb|{eqnarray}| equation environment. Use
 \verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
 environment leaves unsightly spaces around relation symbols.
-
-
-\section{ Idea/Overview of the algorihtm }
-
-   The following section will describe how the algorithm works in general.
-   Then it will roughly sketch the steps of the algorthm.
-   After that it will describe a short mathematical explanation to further increase understanding.
-
-\subsection{Problem statement}
-Given an NxN hamiltonian matrix A and a vector b, we want to solve for the vector x such that
-\begin{equation}
-A \vec{x} = \vec{b}
-\end{equation}
-
-This problem can be rewritten as
-...
-%As described earlier the hermitian matrix A^-1 can also decomposed into its spectral decomposition. A can thus be written as a linear combination outer products of its eigenvectors ... ... weighted by its eigenvalues, lambda.
-This means that if we can find the eigenvalues and eigenvectors of A we can then solve the linear equation quite easily. Classical solutions involving spectral decomposition are not faster than other algorithm such as Gaussian Elimination [quelle]. But estimating eigenvalues and eingewerte can be performed quite efficiently by quantum techniques.
-In the quantum version the formula look like this.
-...
-where |b> and |x> are the quantum state of the b and x vector respectively.
-Note that |x> is just a quantum state. We can not read every element to achieve the x vector. But as mentioned earlier, we are only interested in an approximation of the expectation value of some operator on x.
-
-\subsection{Quantum Circuit}
-
-
-\subsubsection{Registers}
-      The figure above shows the schematic of a simple quantum circuit for the HHL algorithm.
-      We have three registers which describe different sets of qubits in the quantum circuit.
-      The b-register contains the b vector which is encoded into a quantum state |b>. After the whole HHL procedure is done the b-register will contain the solution state |x>.
-
-      The c-register, oftentimes refered to as the clock-register, is used for the quantum phase estimation part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
-
-      The a-register contains the ancilla qubit. It is used for the inversion of the eigenvalues and will be explained in detail later on.
-
-
-\subsubsection{Phases}
-The procedure of the quantum circuit can be split into 4 phases:
-\begin{itemize}
-\item State preparation
-\item Quantum phase estimation (QPE)
-\item Inversion of eigenvalues
-\item Inverse quantum phase estimation (IQPE)
-\end{itemize}
-In the state preparation phase, the b vector will be encoded into a quantum state |b> and the A matrix will be encoded as a hamiltonian, which is a unitary operator
-U=eiAt into the QPE and IQPE operations.
-The Quantum phase estimation will then calculate the eigenvalues and eigenvectors of the A matrix.
-Then we invert the eigenvalues through rotary operations. Unfortunately, these operations have a probability to fail, as they are not unitary operators.
-The ancilla bit will either collapse to |0> or |1> for failure and success respectively.
-If the rotation is not successfull, the procedure has to be repeated.
-If the rotation was successfull we can continue the procedure.
-
-
-\subsubsection{The Overview}
-      - A is Hamiltonian (if not Hamiltonian then ...)
-      - A can be split up outer spectral decomposition (eigenvectors and eigenvalues) ...
-      %- same für A^-1 ...
-      - b can be written in the eigenbasis of A ...
-      - x can be written as...
-
-
-
-
-
-
 
 
 
@@ -320,5 +217,3 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \vspace{12pt}
 \color{red}
 IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
-
-\end{document}
