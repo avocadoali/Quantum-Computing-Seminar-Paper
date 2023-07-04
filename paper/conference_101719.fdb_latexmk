@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1688401938 "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1688401938 0
-  "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/conference_101719.tex" 1688401938 15316 3c2a6f24633899facbefa441b52330a2 ""
+["pdflatex"] 1688480061 "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1688480061 0
+  "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/conference_101719.tex" 1688480061 17305 7e463a52589891f682be8417bd8e48b6 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1687799903 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1687799903 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1687799903 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -23,16 +23,12 @@
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1687799903 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1687799903 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1687799903 940 228d6584342e91276bf566bcf9716b83 ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1687799903 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1687799903 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1687799903 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1687799903 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1687799903 1524 d89e2d087a9828407a196f428428ef4a ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1687799903 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1687799903 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1687799903 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1687799903 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1687799903 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1687799903 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1687799903 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1687799903 1116 25a7bf822c58caf309a702ef79f4afbb ""
@@ -86,8 +82,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1688378489 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1688378480 6768061 cad2a2d004a0a6b3908e4e90b580c9ed ""
   "IEEEtran.cls" 1688401878 288304 b67b6fc6c2abb39f9b461923f5199343 ""
-  "conference_101719.aux" 1688401938 2344 a69b0694c4369593e4db40762d46897e "pdflatex"
-  "conference_101719.tex" 1688401938 15316 3c2a6f24633899facbefa441b52330a2 ""
+  "conference_101719.aux" 1688480061 3135 c51ed911856f9a135051bce03f357176 "pdflatex"
+  "conference_101719.tex" 1688480061 17305 7e463a52589891f682be8417bd8e48b6 ""
   "fig1.png" 1688401878 4535 3b4c70b1b9361fad686e8d234c8fe506 ""
   (generated)
   "conference_101719.aux"
