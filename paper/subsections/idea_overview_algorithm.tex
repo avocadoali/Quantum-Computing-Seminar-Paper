@@ -19,7 +19,7 @@ Note that to encode $\vec b$ we need $\mathcal{O}(log_2 N)$ qubits.
 As described earlier the hermitian matrix $A^{-1}$ can be split into its spectral decomposition. 
 $A$ can be represented in terms of its eigenvalues $U_1 ... U_n$ and eigenvectors $\lambda_1 ... \lambda_n$.
 \begin{equation} 
-A =  U D U^{\dagger} = \begin{pmatrix} U_1 & ...& U_n \end{pmatrix} \begin{pmatrix} \lambda_1 & 0 & 0 \\  0 & \dots & 0\\ 0 & 0& \lambda_n \\ \end{pmatrix} \begin{pmatrix} U^\dagger_1 \\ ...\\ U^\dagger_n \end{pmatrix}
+A =  U D U^{\dagger} = \begin{pmatrix} U_1 & ...& U_n \end{pmatrix} \begin{pmatrix} \lambda_1 & 0 & 0 \\  0 & \ddots & 0\\ 0 & 0& \lambda_n \\ \end{pmatrix} \begin{pmatrix} U^\dagger_1 \\ ...\\ U^\dagger_n \end{pmatrix}
 \end{equation}
 
 This means, if we can find the eigenvalues and eigenvectors of $A$ we can then solve the linear equation quite easily. 

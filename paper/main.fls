@@ -375,11 +375,11 @@ INPUT ./img/example_circuit_cropped.png
 INPUT img/example_circuit_cropped.png
 INPUT ./img/example_circuit_cropped.png
 INPUT ./img/example_circuit_cropped.png
+INPUT ./subsections/hhl_algorithm.tex
+INPUT subsections/hhl_algorithm.tex
+INPUT ./subsections/hhl_algorithm.tex
+INPUT subsections/hhl_algorithm.tex
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT ./subsections/hhl_algorithm.tex
-INPUT subsections/hhl_algorithm.tex
-INPUT ./subsections/hhl_algorithm.tex
-INPUT subsections/hhl_algorithm.tex
 INPUT main.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb

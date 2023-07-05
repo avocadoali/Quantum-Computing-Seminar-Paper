@@ -21,6 +21,10 @@ Math prerequisits
 
 convert example_circuit.png -crop 945x360+0+60 example_circuit_cropped.png
 
+
+References to other papers
+- qpe paper
+
 * HHL Algorihtm
 
 -
