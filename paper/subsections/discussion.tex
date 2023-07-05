@@ -1,0 +1,46 @@
+\section{Discussion}
+
+
+\begin{comment}
+
+look at gauß verfahren 
+not fastest
+look at same constraints 
+conjugate gradient descent much faster with similiar requirements
+only interested in estimate of $\vec{x}^\dagger M \vec x$
+this runs in $ \mathcal{O}(\kappa s log{\left(\frac 1 \epsilon\right)} N ) $
+where 
+\end{comment}
+
+In this section, we evaluate the performance of the HHL algorithm by comparing it to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency.
+
+\subsection{Conjugate Gradient Descent}
+
+The classical conjugate gradient descent algorithm is very common method for solving linear systems of equations. 
+It uses the conjugate direction method, which locates the minimum of a quadratic function efficiently.
+By iteratively updating the solution vector, the algorithm converges towards the exact solution of the linear system.
+It serves as a suitable benchmark for evaluating the performance of the HHL algorithm. 
+Not only is it one of the fastest classical algorithms, it has very similar constraints sets and calculates similar results (eg. $\vec{x}^\dagger M \vec x$).
+
+\subsection{Time Complexity}
+
+
+\begin{table}[htbp]
+\caption{Time complexity comparison}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Conjugate Gradien Descent} & \textbf{HHL Algorithm} \\
+\hline
+$\mathcal{O}\left(\frac{\kappa^2s^2}{\epsilon}\log N\right)$& $\mathcal{O}(\kappa s \log\left(\frac{1}{\epsilon}\right) N)$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Classical conjugate gradient descent, achieves a time complexity of $\mathcal{O}(\kappa s \log\left(\frac{1}{\epsilon}\right) N)$, where $s$ is the sparsness, $\epsilon$ is the accuracy, and $\kappa$ is the condition number.
+The condition number describes how sensitiv the output of a function is on the error of the input.
+That means a function is well conditioned if the output of a function does not change a lot with bigger errors in the input. 
+
+On the other hand, the HHL algorithm exhibits a time complexity of $\mathcal{O}\left(\frac{\kappa^2s^2}{\epsilon}\log N\right)$, which is comparable to the classical conjugate gradient descent algorithm when considering the logarithmic dependence on $N$. 
+Here, $s$ denotes the sparsity of the matrix, and $\epsilon$ represents the desired accuracy.
