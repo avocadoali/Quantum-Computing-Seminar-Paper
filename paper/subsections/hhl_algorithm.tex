@@ -1,12 +1,4 @@
 \section{The HHL Algorithm}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=8.5cm]{img/example_circuit_cropped.png}
-    \caption{Example Circuit}
-    \label{ex_circ}
-\end{figure}
-
 The next section will give a more detailed walkthrough of the HHL algorithm.
 Thereby, it will go through all the 5 phases namely, state preperaration, QPE, inversion of eigenvalues, IQPE and lastly the measurement.
 
@@ -47,17 +39,121 @@ We have to define a scaled version of our eigenvalues $\lambda_j$.
 \begin{equation}
 \widetilde{\lambda_j} = \frac {N\lambda_jt}{2\pi}
 \end{equation}
-where t can be choosen freely so that $\widetilde{\lambda_j}$ are integers. 
+where $t$ can be choosen freely so that the scaled eigenvalues $\widetilde{\lambda_j}$ are integers.
 
 Thus, the eigenvalues of $A$ will be stored in the c-register after QPE as
 \begin{equation}
 \begin{split}
 \ket{\Psi_2} &= \ket{b}_b \ket{\widetilde{\lambda}}_c\ket{0}_a \\
 % &=\left(-\frac{1}{\sqrt{2}} \ket{u_0} \ket{01} +\frac{1}{\sqrt{2}}  \ket{u_1} \ket{10} \right)  \ket{0}_a\\
-& =\sum_{j=0}^{N-1} b_j \ket{u_j}_b \ket{\widetilde{\lambda}_j}_c \ket 0_a
+& =\sum_{j=0}^{N-1} b_j \ket{u_j}_b \ket{\widetilde{\lambda_j}}_c \ket 0_a
 \end{split}
 \end{equation}
 Notice, that the b-register is now a representation of the $\ket b$ state in the eigenbasis $\ket{u_j}$ of $A$.
+
+\subsection{Inversion of the eigenvalues}
+In the next step we want to invert the eigenvalues in our state. 
+This is achieved by the rotation of the ancilla qubit in the a-register by the eigenvalues in the c-register.
+The state of the registers after the rotation looks like this
+
+\begin{equation}
+\ket{\Psi_3} = \sum_{j=0}^{N-1} b_j \ket{u_j}_b {\ket{\widetilde{\lambda_j}}}_c \left(\sqrt{1-\frac{C^2}{\widetilde{\lambda_j^2}}}\ket{0}_a + \frac{C}{\widetilde{\lambda_j}} \ket{1}_a\right)
+\end{equation}
+
+where $C$ is a constant that should be chosen to be as large as possible to increase the success probability.
+Currently, the state of the a-register can either collapse into $\ket 1$ or $\ket 0$. 
+The probability of the state collapsing to $\ket 1$ is $\left|\frac C {\widetilde{\lambda_j}}\right|^2$.
+If the ancilla bit collapses to $\ket 0$, the whole procedure has to be repeated from the beginning. 
+As mentioned earlier this has to be done, because the rotation process is not unitary and has a probability to fail.
+
+We assume that our rotation process was successfull and the ancilla bit collapses to $\ket 1$. 
+The registers will look as such
+\begin{equation}
+\ket{\Psi_4}= \frac {1} {\sqrt{\sum_{j=0}^{N-1}   \left|  \frac{b_jC} {\widetilde{\lambda_j}}\right|^2   }} 
+\sum_{j=0}^{N-1} b_j \ket{u_j}_b \ket{\widetilde{\lambda_j}}_c \frac{C}{\widetilde{\lambda_j}} \ket1_a
+\end{equation}
+Note that term in front of the sum is just a factor to normalize the state. 
+Lets call this normalization factor $D$.
+We see that we now have a term $\frac{C}{\widetilde{\lambda_j}}$ that represents the inverted eigenvalues. 
+This term can be moved around freely as it is just a scalar and can be moved, such that it is applied to the b-register
+\begin{equation}
+\ket{\Psi_4}= D
+\sum_{j=0}^{N-1} \frac{C}{\widetilde{\lambda_j}} b_j \ket{u_j}_b \ket{\widetilde{\lambda_j}}_c \ket1_a
+\end{equation}
+
+If we go back to our idea from the mathematical overview section, our b-register is in the same form as our solution state
+\begin{equation}
+\ket{x} = \sum_{i=0}^{N-1} \lambda_i^{-1} b_j\ket{u_j}\\
+\end{equation}
+
+That means our solution is already encoded in our registers. 
+The problem here is, that we cannot read the solution out yet.
+This has to with the states in the b-register and c-register being entangled with each other. 
+That means we cannot convert the b-register into a $\ket0 / \ket 1$ measurement.
+In the following we have to undo all operations to unentangle the state in the b-register and c-register, to achieve the correct result.
+
+\subsection{Inverse Quantum Phase estimation.}
+The unentangling of the registers is achieved throught the IQPE which just backtracks all calculations of the QPE.
+We are left with the following state
+
+\begin{equation}
+\begin{split}
+\ket{\Psi_5} &= \frac {1} {\sqrt{\sum_{j=0}^{N-1} \left| \frac{b_jC} {\lambda_j}\right|^2}}
+\sum_{j=0}^{N-1}\frac{ C}{\lambda_j}   b_j \ket{u_j}_b \ket{0}_c^{\otimes n} \ket{1}_a\\
+&= \frac {C} {\sqrt{\sum_{j=0}^{2^{n_b}-1} \left| \frac{b_jC} {\lambda_j}\right|^2}}
+\ket{x}_b \ket{0}^{\otimes n}_c \ket{1}_a
+\end{split}
+\end{equation}
+
+The a-register is untouched and still hold the $\ket 1$ state as before. 
+The c-register however is reset to the zero state $\ket{0}^{\otimes n}_c$ as in the beginning of the process. 
+It is now unentangled from the b-register.
+The b-register now contains the solution $\ket x$ after the uncomputation and can be measuremed correctly.
+
+We can furthermore simplify the term as we assume that  $C$ is real and that the eigenvectors $\ket{u_i}$, and the $\ket b$ state are normalized.
+Then we can simplify to 
+
+\begin{equation}
+\begin{split}
+\ket{\Psi_5} &= \frac {1} {\sqrt{\sum_{j=0}^{N-1} \left| \frac{b_j} {\lambda_j}\right|^2}}
+\ket{x}_b \ket{0}^{\otimes n}_c \ket{1}_a\\
+&= \ket{x}_b \ket{0}^{\otimes n}_c \ket{1}_a
+\end{split}
+\end{equation}
+
+We can now  read out the result $\ket x$ in the b-register.
+
+\subsection{Measurement}
+As mentioned earlier, we cannot obtain the whole solution for the $\vec x$ as reading out all the entries would cost us $\mathcal{O}(N)$ steps.
+This would ommit our speedup of $\mathcal{O}(log N)$. 
+That means that by measuring, we will only obtain an estimate of specific features of $\ket x$.
+Using a linear operator $M$ we can perform various measurements on $\ket x$ by calculating the inner product as such
+\begin{equation}
+    \bra x M \ket x
+\end{equation}
+With this we can extract various statistical features of $\ket x$ like the norm of the vector, the average of the weight of the components, moments, probability distributions, localization and concentration in specific regions, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

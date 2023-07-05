@@ -7,11 +7,16 @@
 - get rid of the tensor sentence thingy
   - edit scheme ft -> IQFT, add psi state markers
   - |b> -> |0..0>
+  - measurement is missing
+
+Overview
+- specify that inverse A can be achieved by inverting the eigenvalues
+
 
 Math prerequisits
 - encoding scheme
 - entanglement
--
+- probability of a state
 
 
 convert example_circuit.png -crop 945x360+0+60 example_circuit_cropped.png
