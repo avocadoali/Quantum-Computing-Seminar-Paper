@@ -1,6 +1,58 @@
-
 #+TITLE: Text_hhl
 
+
+
+* Todos
+- specifiy what the qubits contain after each step in the overview??
+- get rid of the tensor sentence thingy
+  - edit scheme ft -> IQFT, add psi state markers
+  - |b> -> |0..0>
+
+Math prerequisits
+- encoding scheme
+- entanglement
+-
+
+
+convert example_circuit.png -crop 945x360+0+60 example_circuit_cropped.png
+
+* HHL Algorihtm
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Overview Algorithm
 \section{ Idea/Overview of the algorihtm }
 The following section will describe how the algorithm works in general.
 Then it will roughly sketch the steps of the algorthm.
