@@ -1,8 +1,6 @@
 \section{Discussion}
 
-
 \begin{comment}
-
 look at gauß verfahren 
 not fastest
 look at same constraints 
@@ -12,35 +10,63 @@ this runs in $ \mathcal{O}(\kappa s log{\left(\frac 1 \epsilon\right)} N ) $
 where 
 \end{comment}
 
-In this section, we evaluate the performance of the HHL algorithm by comparing it to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency.
+In this section, we evaluate the performance of the HHL algorithm.
+The most common known method to solve a system of linear equations is Gaussian Elimination. 
+The time complexity of the Gaussian is $\mathcal{O} (N^3)$, which is drastically slower than other classical methods.
+As we are only interested in an estimate of an expectation value $\ket x M \ket x$, we can take a look of similar classical methods, considering other constraints.
+
+In the following we will compare the HHL algorithm, to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency.
 
 \subsection{Conjugate Gradient Descent}
-
 The classical conjugate gradient descent algorithm is very common method for solving linear systems of equations. 
-It uses the conjugate direction method, which locates the minimum of a quadratic function efficiently.
-By iteratively updating the solution vector, the algorithm converges towards the exact solution of the linear system.
-It serves as a suitable benchmark for evaluating the performance of the HHL algorithm. 
-Not only is it one of the fastest classical algorithms, it has very similar constraints sets and calculates similar results (eg. $\vec{x}^\dagger M \vec x$).
+It uses the conjugate direction method, which can locate the minimum of a function. 
+By iteratively looking for solution vectors, the procedure converges towareds the solution of the linear system.
+This will provide us a suitable benchmark for analyzing the efficiency of the HHL algorihtm.
+Not only is it one of the fastest classical algorithms, it has very similar constraints set and calculates similar results (eg. $\vec{x}^\dagger M \vec x$).
 
 \subsection{Time Complexity}
-
-
 \begin{table}[htbp]
-\caption{Time complexity comparison}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-\textbf{Conjugate Gradien Descent} & \textbf{HHL Algorithm} \\
-\hline
-$\mathcal{O}\left(\frac{\kappa^2s^2}{\epsilon}\log N\right)$& $\mathcal{O}(\kappa s \log\left(\frac{1}{\epsilon}\right) N)$ \\
-\hline
-\end{tabular}
-\end{center}
+    \caption{Time complexity comparison}
+    \begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Conjugate Gradien Descent} & \textbf{HHL Algorithm} \\
+    \hline
+    $\mathcal{O}(\kappa s \log\left(\frac{1}{\epsilon}\right) N)$  &  $\mathcal{O}\left(\frac{\kappa^2s^2}{\epsilon}\log N\right)$\\
+    \hline
+    $\Rightarrow \mathcal{O} (N)$ & $\Rightarrow \mathcal{O} (log(N))$\\ 
+    \hline
+    \end{tabular}
+    \end{center}
 \end{table}
 
-Classical conjugate gradient descent, achieves a time complexity of $\mathcal{O}(\kappa s \log\left(\frac{1}{\epsilon}\right) N)$, where $s$ is the sparsness, $\epsilon$ is the accuracy, and $\kappa$ is the condition number.
-The condition number describes how sensitiv the output of a function is on the error of the input.
-That means a function is well conditioned if the output of a function does not change a lot with bigger errors in the input. 
+As shown in the table, the HHL algorithm offers an exponential improvement compared to the conjugate gradient descent method.
+Conjugate gradient descent.
+Conjugate gradient descrent achieves a time complexity of $\mathcal{O}(N)$, whereas the HHL algorihtm runs in $\mathcal{O}(log(N))$.
 
-On the other hand, the HHL algorithm exhibits a time complexity of $\mathcal{O}\left(\frac{\kappa^2s^2}{\epsilon}\log N\right)$, which is comparable to the classical conjugate gradient descent algorithm when considering the logarithmic dependence on $N$. 
-Here, $s$ denotes the sparsity of the matrix, and $\epsilon$ represents the desired accuracy.
+Now we will take a more detailed look a the other factors involved in the timecomplexity, where:
+\begin{itemize}
+    \item $s$ is the s-sparsness
+    \item $\kappa$ is the condition number
+    \item $\epsilon$ is the accuracy
+\end{itemize}
+$s$ is the s-sparsness
+$\kappa$ is the condition number
+$\epsilon$ is the accuracy
+
+The sparsness $s$, describes to number of non-zero entries per row
+(e.g. a 2-sparse matrix only contains 2 non-zero entries per row).
+The condition number $\kappa$, describes how sensitiv the output of a function is on the error of the input.
+That means, a function is well conditioned if the output of a function does not change a lot for bigger errors in the input. 
+Lastly, $\epsilon$ describes the accuracy of our desired solution.
+We can observer, that the sparsity $s$ and condition number $\kappa$ are quadratic in the HHL algorihtm, whereas in the conjugate gradient descent algorithm, both factors operate linearly.
+Furthermore, the accuracy $\epsilon$ is exponentially worse in the HHL algorithm. 
+Thus, in terms of sparsity, accuracy and and condition number, the HHL algorithm a worse runtime over the conjugate gradient descent algorithm.
+If these prefactors where not worse than in the classical solution, this would have bizarre implications. 
+One can show that if the dependency is better or equal than in the classical solution, one could solve \textit{NP-Complete} problems in exponential faster times on quatum computers, which seems unlikely.
+
+All in all, these constraints are important to consider when choosing applications, as they have a great effect on the runtime. 
+
+
+
+
