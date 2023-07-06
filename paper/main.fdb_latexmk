@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1688643606 "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/main.tex" "main.pdf" "main" 1688643606 0
-  "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/main.tex" 1688601091 1029 819bce55858a4fe5cd7c28b1861b8d1c ""
+["pdflatex"] 1688643902 "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/main.tex" "main.pdf" "main" 1688643902 0
+  "/home/ali/tum/seminar/Quantum-Computing-Seminar-Paper/paper/main.tex" 1688643901 1034 da6ecdf834bcb0efcb878472c0ac8852 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1687799903 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1687799903 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1687799903 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -89,10 +89,10 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1688378489 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1688378480 6768061 cad2a2d004a0a6b3908e4e90b580c9ed ""
   "IEEEtran.cls" 1688401878 288304 b67b6fc6c2abb39f9b461923f5199343 ""
-  "main.aux" 1688643606 1506 e04dd6e400b6f187c53091da1b539b93 "pdflatex"
-  "main.tex" 1688601091 1029 819bce55858a4fe5cd7c28b1861b8d1c ""
-  "subsections/discussion.tex" 1688643606 3964 61995614ced884d306c112662b4f6e7e ""
+  "main.aux" 1688643902 1511 ed465dc8aa29c83b4358a5d50f997a1c "pdflatex"
+  "main.tex" 1688643901 1034 da6ecdf834bcb0efcb878472c0ac8852 ""
   "subsections/lorem.tex" 1688565019 4223 e0c08f7971bf192436e4524fff125b98 ""
+  "subsections/time_complexity.tex" 1688643848 3969 a1ab8c99d5ec12bac7b2c0fd29829e6b ""
   (generated)
   "main.aux"
   "main.log"
