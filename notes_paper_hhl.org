@@ -1,6 +1,14 @@
 #+TITLE: Seminar_paper_overview
 
 
+* Todo
+gpt fragen was fehlt in der ausarbeitung
+- physical constrains
+-
+
+
+
+
 * Gliederung
 
 1. Abstract (3. )
