@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.3)  8 JUL 2023 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.3)  8 JUL 2023 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -304,18 +304,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) Excluding 'comment' comment.) (./subsections/quantum_mechanical_concepts.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
-]) (./subsections/idea_overview_algorithm.tex [2]
-<img/example_circuit_cropped.png, id=24, 948.54375pt x 361.35pt>
+] [2]) (./subsections/idea_overview_algorithm.tex [3]
+<img/example_circuit_cropped.png, id=27, 948.54375pt x 361.35pt>
 File: img/example_circuit_cropped.png Graphic file (type png)
 <use img/example_circuit_cropped.png>
-Package pdftex.def Info: img/example_circuit_cropped.png  used on input line 92.
-(pdftex.def)             Requested size: 256.0748pt x 97.54926pt.
-
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 92--93
- [][] 
+Package pdftex.def Info: img/example_circuit_cropped.png  used on input line 94.
+(pdftex.def)             Requested size: 241.84842pt x 92.12924pt.
+) (./subsections/hhl_algorithm.tex [4 <./img/example_circuit_cropped.png>]) (./subsections/example.tex [5] [6]
+Overfull \hbox (17.95364pt too wide) detected at line 138
+[]
  []
 
-[3 <./img/example_circuit_cropped.png>]) (./subsections/hhl_algorithm.tex [4]) (./subsections/time_complexity.tex Excluding 'comment' comment. [5]) (./subsections/outlook.tex [6]) (./subsections/references.tex Excluding 'comment' comment.)
+) (./subsections/time_complexity.tex Excluding 'comment' comment. [7]) (./subsections/applications_variations.tex [8]) (./subsections/conclusion.tex) (./subsections/references.tex Excluding 'comment' comment.)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -327,24 +327,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./main.aux)
+[9
+
+] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4345 strings out of 477985
- 68210 string characters out of 5840059
- 1878388 words of memory out of 5000000
- 24474 multiletter control sequences out of 15000+600000
+ 4355 strings out of 477985
+ 68531 string characters out of 5840059
+ 1880388 words of memory out of 5000000
+ 24478 multiletter control sequences out of 15000+600000
  550829 words of font info for 109 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,21n,62p,421b,280s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,23n,62p,421b,280s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 318552 bytes).
+Output written on main.pdf (9 pages, 330205 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

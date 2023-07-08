@@ -1,12 +1,12 @@
 \section{Quantum mechanical concepts}
-In this section, we will discuss some basic quantum mechanical concepts. 
+In this section, we will define some basic quantum mechanical concepts. 
 
 \subsection{Hermitian matrix}
 A Hermitian matrix is a matrix, which is equal to its adjoint matrix. 
-The matrix contains complex numbers and is the same after transposing and taking the complex conjugate of itself. 
+That means a matrix containing complex entries, is the equal to itself after transposing and taking the complex conjugate of itself. 
 Thus, a hermitian matrix $A^\dagger$ is defined as such
 \begin{equation}
- A = \overline{A^T} \ = A^\dagger
+ A = \overline{A^T} \Leftrightarrow A^\dagger
 \end{equation}
 For example the following matrix is Hermitian:
 \begin{equation}
@@ -17,19 +17,36 @@ A &= \begin{bmatrix} 2 & 1-i \\ 1+i & 3 \\ \end{bmatrix} \\
 \Rightarrow A &= \overline{A^T} = A^\dagger
 \end{split}
 \end{equation}
-Hermitian matrices are important as we can easily encode them into our quantum system. 
+
+Hermitian matrices are important as we can easily encode them into quantum systems.
 More details will follow in the subsection for the types of encoding.
 
 \subsection{Spectral Decomposition}
 Lets say we have a Matrix A that we can diagonalize. 
-Then we can describe it by its spectrum which is a matrix with the eigenvalues in the diagonal.
+Then we can describe it by its spectrum which is a matrix with the eigenvalues in its diagonal
 \begin{equation} 
-A =  U D U^{\dagger} = \begin{pmatrix} U_1 & \dots & U_n \end{pmatrix} \begin{pmatrix} \lambda_1 & 0 & 0 \\  0 & \ddots & 0\\ 0 & 0& \lambda_n \\ \end{pmatrix} \begin{pmatrix} U^\dagger_1 \\ \vdots \\ U^\dagger_n \end{pmatrix}
+\begin{split}
+A &=  U D U^{\dagger} \\
+&= \begin{pmatrix} U_1 & \dots & U_n \end{pmatrix} \begin{pmatrix} \lambda_1 & 0 & 0 \\  0 & \ddots & 0\\ 0 & 0& \lambda_n \\ \end{pmatrix} \begin{pmatrix} U^\dagger_1 \\ \vdots \\ U^\dagger_n \end{pmatrix}
+\end{split}
 \end{equation}
 where $D$ is the diagonal matrix consisting of the eigenvalues and U consisting of eigenvectors of $A$.
 With this, we can describe a matrix only by its eigenvectors and eigenvalues. 
-Classically calculating the diagonal matrice of eigenvalues is slow, in comparison to the quantum version. 
-As we will see, this will play a big role in our computation. 
+Similary, we can also determine the inverse $A^{-1}$ by simply inverting the eigenvalues as such
+
+\begin{equation}
+\begin{split}
+ A^{-1} 
+ &=  U^{\dagger} D^{-1} U\\
+ &= \begin{pmatrix} U^\dagger_1 \\ \vdots \\ U^\dagger_n \end{pmatrix}
+\begin{pmatrix} \lambda_1^{-1} & 0 & 0\\ 0 & \ddots & 0\\ 0 & 0& \lambda_n^{-1} \\ \end{pmatrix}
+\begin{pmatrix} U_1 & \dots & U_n \end{pmatrix} 
+\end{split}
+\end{equation}
+
+
+Classically calculating the inverse matrice by inverting its eigenvalues is quite slow. 
+Though in the quantum version we will see, that this will play a big role in making our computation faster.
 
 \subsection{Types of Encoding}
 Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding and Amplitude encoding.
@@ -44,15 +61,16 @@ For example, a possible unitary gate of the matrix $A$ is
 if $A$ is a Hermitian matrix.
 
 \subsubsection{Basis Encoding}
-Basis encoding converts classical numbers into quantum state, by using the binary representation of a number, we can directly write it into our quantum state. 
+Basis encoding converts classical numbers into quantum states.
+By using the binary representation of a number, we can directly write it into our quantum state. 
 \begin{equation}
     x \rightarrow \ket {x}
 \end{equation}
-where $x$ is our binary number.
-Lets say $x=3$ is our decimal number and can be represented as a binary number as such $x_b = 11$.
+where $x$ is a binary number.
+Lets say we have $x=3$ as a decimal number which can be represented as a binary number as $x_b = 11$.
 Then we can encode it in our quantum state as such
 \begin{equation}
-    x=2 \xrightarrow[]{binary} x_b = 10 \xrightarrow[]{quantum\  state} \ket{x_b} = \ket{10}
+    x=3 \xrightarrow[]{binary} x_b = 11 \xrightarrow[]{quantum\  state} \ket{x_b} = \ket{11}
 \end{equation}
 
 \subsubsection{Amplitude Encoding}
@@ -66,12 +84,13 @@ Then we can use the elements of the vector $\vec x$ as coefficients of the state
 \end{equation}
 
 \subsection{Kronecker Delta}
-The Kronecker delta $\delta_{ij}$ is often used to simplify calculations with inner product $\braket{\psi | \phi}$.
+The Kronecker delta $\delta_{ij}$ is often used to simplify calculations with inner products $\braket{\psi | \phi}$.
 Basically, $\psi$ and $\phi$ can be handeled like normal vectors. 
 The inner product can calculate the angle between vectors, which means that for two orthogonal kets the inner product is $0$ as such
 \begin{equation}
-\braket{\psi|\phi} = 1
+\braket{\psi|\phi} = 0 \text{, if } \psi \perp \phi\\
 \end{equation}
+
 Lets say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are orthonormal to each other, then we have the following relation
 \begin{equation}
 \begin{split}
@@ -82,13 +101,14 @@ Lets say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are
 
 We can see that if the indices are the same, which means the vectors are pointing into the same direction, the inner product is $1$.
 If they are orthogonal to each other, which means every other vector in an orthonormal basis, then the inner product is $0$.
-This can be summarized in the Kronecker delta
+This can be summarized into the Kronecker delta
 \begin{equation}
     \delta_{ij} = \braket{E_i|E_j} = \begin{cases} 1 & \text{if } i=j\\ 0 & \text{if } i \neq j
 \end{cases}
 \end{equation}
-This can quite usefull in calculations with orthonormal basises
-When calculating inner product of an orthonormal basis, whilst the indices are not equal, terms can be multiplied by $0$ and will be cancel out, simplifying the equation.
+
+This can be quite usefull in calculations with orthonormal basises.
+When calculating inner products of an orthonormal basis, whilst the indices are not equal, terms are multiplied by $0$ and will be cancel out, simplifying the equation.
 
 \subsection{Etangled states}
 Entangled states can not be represented by a tensor product of individual states. 
@@ -96,7 +116,7 @@ Entangled states are defined as such
 \begin{equation}
     \ket{\Phi} \neq \ket{\phi} \ket{\psi}
 \end{equation}
-As an example here we have a state $\ket{Psi_1}$ which is not entangled, as we can represent it by two other states
+As an example here we have a state $\ket{\Phi_1}$ which is not entangled, as we can represent it by two other states
 \begin{equation}
 \begin{split}
 \ket{\Phi_1} &= \frac{1}{\sqrt{2}} ( \ket{10} + \ket{11}) \\ 
@@ -104,8 +124,8 @@ As an example here we have a state $\ket{Psi_1}$ which is not entangled, as we c
 &= \ket{1} \ket{+}
 \end{split}
 \end{equation}
-where $\ket +$ is the Hadmard  $H \ket{0}$.
-On the other hand the following state $\Psi_2$ is entangled 
+where $\ket +$ is the Hadmard  state $H \ket{0}$.
+On the other hand the following state $\Phi_2$ is entangled 
 \begin{equation}
 \begin{split}
 \ket{\Phi_2} &= \frac{1}{\sqrt{2}} ( \ket{00} + \ket{11}) \\

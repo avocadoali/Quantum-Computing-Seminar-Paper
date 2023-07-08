@@ -6,7 +6,7 @@ Then, it will sketch out the steps of the algorithm.
 
 \subsection{Problem statement}
 
-Given an NxN hamiltonian matrix $A$ and $\vec a$ vector $\vec b$, we want to solve for the vector $\vec x$ such that,
+Given an $N\times N$ hamiltonian matrix $A$ and vector $\vec b$, we want to solve for the vector $\vec x$ such that,
 \begin{equation}
 A \vec{x} = \vec{b}
 \end{equation}
@@ -14,17 +14,19 @@ To solve for x the equation can be rewritten as
 \begin{equation}
 \vec{x} = A^{-1}\vec{b}
 \end{equation}
-Note that to encode $\vec b$ we need $\mathcal{O}(log_2 N)$ qubits.
 
+Note that to encode $\vec b$ we need $\mathcal{O}(log_2 N)$ qubits.
 As described earlier the hermitian matrix $A^{-1}$ can be split into its spectral decomposition. 
-$A$ can be represented in terms of its eigenvalues $U_1 ... U_n$ and eigenvectors $\lambda_1 ... \lambda_n$.
+$A^{-1}$ can be represented in terms of its eigenvectors $U_1 ... U_n$ and inverted eigenvectors $\lambda_1^{-1 } ... \lambda_n^{-1}$.
 \begin{equation} 
-A =  U D U^{\dagger} = \begin{pmatrix} U_1 & ...& U_n \end{pmatrix} \begin{pmatrix} \lambda_1 & 0 & 0 \\  0 & \ddots & 0\\ 0 & 0& \lambda_n \\ \end{pmatrix} \begin{pmatrix} U^\dagger_1 \\ ...\\ U^\dagger_n \end{pmatrix}
+ A^{-1} = \begin{pmatrix} U^\dagger_1 \\ \vdots \\ U^\dagger_n \end{pmatrix}
+\begin{pmatrix} \lambda_1^{-1} & 0 & 0\\ 0 & \ddots & 0\\ 0 & 0& \lambda_n^{-1} \\ \end{pmatrix}
+\begin{pmatrix} U_1 & \dots & U_n \end{pmatrix} 
 \end{equation}
 
 This means, if we can find the eigenvalues and eigenvectors of $A$ we can then solve the linear equation quite easily. 
 Classical solutions involving spectral decomposition are not faster than other standard algorithms such as Gaussian Elimination. 
-Though, estimating eigenvalues and eigenwerte can be performed quite efficiently by quantum methods.
+Though, estimating eigenvalues and eigenvectors can be performed quite efficiently by quantum methods.
 Via amplitude amplification, QPE can be accelerated to generate the eigenvalues and eigenvectors in $\mathcal{O}(log_2 N)$ steps.
 
 In the quantum version the linear equation looks like this
@@ -68,7 +70,7 @@ Similary $\ket b$ can be expressed in the eigenbasis of $A$ like this
 \ket{b} = \sum_{j=0}^{N-1} b_j\ket{u_j}
 \end{equation}
 
-We now have all the tools to solve the equation by inserting the definition of $A^{-1}$ and $\ket b$ into our original equation,
+We now have all the tools to solve the equation, with the help of the Kronecker delta $\delta_{ij}$, by inserting the definition of $A^{-1}$ and $\ket b$ into our original equation,
 \begin{equation}
 \begin{split}
 \ket{x} &= A^{-1} \ket{b}\\
@@ -89,14 +91,14 @@ Using Quantum Phase Estimation, calculating the eigenvalues and eigenvectors for
 
 \begin{figure}
     \centering
-    \includegraphics[width=9.0cm]{img/example_circuit_cropped.png}
+    \includegraphics[width=8.5cm]{img/example_circuit_cropped.png}
     \caption{Example Circuit}
     \label{ex_circ}
 \end{figure}
 
 
-We will now look at how the algorithm is implemented in the quantum circuit. 
-We will firstly look at the sets of qubits need for the algorithm. 
+We will now take a look at how the algorithm is implemented as a quantum circuit. 
+We will firstly look at the sets of qubits needed for the algorithm. 
 Then, we will describe the phases of the procedure.
 
 \subsubsection{Registers}

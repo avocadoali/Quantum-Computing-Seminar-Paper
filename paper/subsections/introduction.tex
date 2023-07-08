@@ -6,7 +6,7 @@ Linear systems are a fundamental problem in math or can be found in subroutines 
 Linear systems are in the form of $A \vec x = \vec b$, where $A$ is a given matrix, $\vec b$ is a given vector and $\vec x$ is the unknown to be solved.
 The HHL (Harrow, Hassidim, and Lloyd) algorithm is a quantum algorithm, that is able to solve these linear systems of equations exponentially faster than its classical counter part. 
 Though, there are a few caveats to consider.
-We assume that we only want to solve for an expectation value of some operator on $\vec x$, e.g. $\vec{x}^\dagger M \vec x$ for some matrix $M$.
+We assume that we are only interested in solving for an expectation value of some operator on $\vec x$, e.g. $\vec{x}^\dagger M \vec x$ for some matrix $M$.
 That means we are not interested in the whole solution of $\vec x$.
 Also, we assume that the matrix $A$ is sparse and is in the size of $N\times N$. 
 Given these requirements, classical algorithms can solve this problem in $\mathcal{O}(N )$, whereas the HHL algorithm can solve this problem in $\mathcal{O}(log (N) )$.
@@ -33,10 +33,9 @@ The most famous case being the Shor's algorithm for factoring large numbers, pos
 
 Solving linear systems is a fundamental subproblem in many scientific, engineering and mathematical discplines. 
 Currently, the demand for processing data sets is increasing. 
-The sizes of these datasets which make up the equations, is growing well into terabytes and petabytes of data.
+The sizes of these datasets which make up the equations, are growing well into terabytes and petabytes of data.
 Obtaining solutions for these kind of problems can be very computational expensive.
-Even an approximation of these solutions with $N$ unknowns take at least $N$ timesteps.
-Just outputting the solution takes at least N steps, as we have to read out all the $N$ unkowns for the whole solution.
+Even an approximation of these solutions with $N$ unknowns take at least $N$ timesteps, as even just outputting the solution vector takes at least N steps, as we have to read out all the $N$ unkowns for the whole solution.
 
 Though, oftentimes we are not interestd in the full solution vector. 
 For example, we can assume that we are only interested in a function, that determines the weights of some subsets in a specific region of the vector.
@@ -56,8 +55,8 @@ This promises us an exponential speed up over the commonly used classical method
 \subsection{Outline}
 Firstly, this paper will discuss some quantum mechanical concepts.
 After that, we will give a rough overview of the HHL algorithm, specifying the problem in detail, giving a mathematical idea of the algorithm, followed by the explanation of the quantum circuit.
-Then, we will discuss the HHL algorithm, going through all the phases of the algorithm.
-Next, we evaluate and analyze its runtime by comparing the HHL algorithm by its classical counterpart. 
+Then, we will discuss the HHL algorithm, going through all the phases of the algorithm in detail. 
+Next, we evaluate and analyze its runtime by comparing the HHL algorithm to its classical counterpart. 
 Afterwards, we will take an outlook at future works, exploring potential applications, variations of the HHL algorithm and will relate it to IT security. 
 In the end we will give a final conclusion, summarizing our findings. 
 
