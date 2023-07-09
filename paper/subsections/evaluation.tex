@@ -12,18 +12,18 @@ where
 
 In this section, we evaluate the performance of the HHL algorithm and will shortly look at resource requirements.
 
-The most common known method to solve a system of linear equations is Gaussian Elimination. 
+The most commonly known method to solve a system of linear equations is Gaussian Elimination. 
 The time complexity of the Gaussian is $\mathcal{O} (N^3)$, which is drastically slower than other classical methods.
-As we are only interested in an estimate of an expectation value $\ket x M \ket x$, we can take a look of similar classical methods, considering other constraints.
+As we are only interested in an estimate of an expectation value $\ket x M \ket x$, we can take a look at similar classical methods, considering other constraints.
 
 In the following we will compare the HHL algorithm, to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency.
 
 \subsection{Conjugate Gradient Descent}
-The classical conjugate gradient descent algorithm is very common method for solving linear systems of equations. 
+The classical conjugate gradient descent algorithm is a very common method for solving linear systems of equations. 
 It uses the conjugate direction method, which can locate the minimum of a function. 
-By iteratively looking for solution vectors, the procedure converges towareds the solution of the linear system.
-This will provide us a suitable benchmark for analyzing the efficiency of the HHL algorihtm.
-Not only is it one of the fastest classical algorithms, it has very similar constraints set and calculates similar results (eg. $\vec{x}^\dagger M \vec x$).
+By iteratively looking for solution vectors, the procedure converges toward the solution of the linear system.
+This will provide us with a suitable benchmark for analyzing the efficiency of the HHL algorithm.
+Not only is it one of the fastest classical algorithms, but also has a very similar constraint set and calculates similar results (eg. $\vec{x}^\dagger M \vec x$).
 
 \subsection{Comparison of Time Complexity }
 \begin{table}[htbp]
@@ -31,7 +31,7 @@ Not only is it one of the fastest classical algorithms, it has very similar cons
     \begin{center}
     \begin{tabular}{|c|c|}
     \hline
-    \textbf{Conjugate Gradien Descent} & \textbf{HHL Algorithm} \\
+    \textbf{Conjugate Gradient Descent} & \textbf{HHL Algorithm} \\
     \hline
     $\mathcal{O}(\kappa s \log\left(\frac{1}{\epsilon}\right) N)$  &  $\mathcal{O}\left(\frac{\kappa^2s^2}{\epsilon}\log N\right)$\\
     \hline
@@ -43,37 +43,37 @@ Not only is it one of the fastest classical algorithms, it has very similar cons
 
 As shown in the table, the HHL algorithm offers an exponential improvement compared to the conjugate gradient descent method.
 Conjugate gradient descent.
-Conjugate gradient descrent achieves a time complexity of $\mathcal{O}(N)$, whereas the HHL algorihtm runs in $\mathcal{O}(log(N))$.
+Conjugate gradient descent achieves a time complexity of $\mathcal{O}(N)$, whereas the HHL algorithm runs in $\mathcal{O}(log(N))$.
 
-Now we will take a more detailed look a the other factors involved in the timecomplexity, where:
+Now we will take a more detailed look a the other factors involved in the time complexity, where:
 \begin{itemize}
-    \item $s$ is the s-sparsness
+    \item $s$ is the s-sparseness
     \item $\kappa$ is the condition number
     \item $\epsilon$ is the accuracy
 \end{itemize}
 
-The sparsness $s$, describes to number of non-zero entries per row
+The sparseness $s$ describes to number of non-zero entries per row
 (e.g. a 2-sparse matrix only contains 2 non-zero entries per row).
-The condition number $\kappa$, describes how sensitiv the output of a function is on the error of the input.
+The condition number $\kappa$ describes how sensitive the output of a function is at the error of the input.
 That means, a function is well conditioned if the output of a function does not change a lot for bigger errors in the input. 
-These two factors are related to the QPE phase as, a unitary $e^{iAt}$ has to be generated. 
+These two factors are related to the QPE phase as a unitary $e^{iAt}$ has to be generated. 
 This step heavily relies on the sparsity $s$ and conditioning $\kappa$ of the matrix $A$ to be performed efficiently.
 If not, this process would grow $\mathcal{O}(N^c)$ for some constant $c$.
-Again, this would ommit our speedup of $\mathcal{O}(log(N))$.
+Again, this would omit our speedup of $\mathcal{O}(log(N))$.
 
 Lastly, $\epsilon$ describes the accuracy of our desired solution.
-We can observer, that the sparsity $s$ and condition number $\kappa$ are quadratic in the HHL algorihtm, whereas in the conjugate gradient descent algorithm, both factors operate linearly.
+We can observe, that the sparsity $s$ and condition number $\kappa$ are quadratic in the HHL algorithm, whereas in the conjugate gradient descent algorithm, both factors operate linearly.
 Furthermore, the accuracy $\epsilon$ is exponentially worse in the HHL algorithm. 
-Thus, in terms of sparsity, accuracy and and condition number, the HHL algorithm a worse runtime over the conjugate gradient descent algorithm.
-If these prefactors where not worse than in the classical solution, this would have bizarre implications. 
-One can show that if the dependency is better or equal than in the classical solution, one could solve \textit{NP-Complete} problems in exponential faster times on quatum computers, which seems unlikely.
-All in all, these constraints are important to consider when choosing applications, as they have great effect on the runtime. 
+Thus, in terms of sparsity, accuracy and condition number, the HHL algorithm has a worse runtime than the conjugate gradient descent algorithm.
+If these prefactors were not worse than in the classical solution, this would have bizarre implications. 
+One can show that if the dependency is better or equal as in the classical solution, one could solve \textit{NP-Complete} problems in exponentially faster times on quantum computers, which seems unlikely.
+All in all, these constraints are important to consider when choosing applications, as they have a great effect on the runtime. 
 
 
 \subsection{Resource requirements}
 The resource requirements to implement the HHL algorithm are substantial.
-Looking at the structure of the algorithm is has very similar structure to the Shor's algorithm. 
+Looking at the structure of the algorithm has a very similar structure to Shor's algorithm. 
 We can use Shor's procedure as a lower bound to estimate the resource requirements.
 Shor's algorithm for 2048 RSA, needs roughly 4000 logical qubits to work properly. 
 To compensate for error correction and other quantum effects in the circuit, this would take millions of qubits. 
-Although, these numbers have been dropped many times over the past couple of years.
+Although, these numbers have dropped many times over the past couple of years.

@@ -3,12 +3,12 @@ In this section, we will define some basic quantum mechanical concepts.
 
 \subsection{Hermitian matrix}
 A Hermitian matrix is a matrix, which is equal to its adjoint matrix. 
-That means a matrix containing complex entries, is the equal to itself after transposing and taking the complex conjugate of itself. 
+That means a matrix containing complex entries, is equal to itself after transposing and taking the complex conjugate of itself. 
 Thus, a hermitian matrix $A^\dagger$ is defined as such
 \begin{equation}
  A = \overline{A^T} \Leftrightarrow A^\dagger
 \end{equation}
-For example the following matrix is Hermitian:
+For example, the following matrix is Hermitian:
 \begin{equation}
 \begin{split}
 A &= \begin{bmatrix} 2 & 1-i \\ 1+i & 3 \\ \end{bmatrix} \\
@@ -22,7 +22,7 @@ Hermitian matrices are important as we can easily encode them into quantum syste
 More details will follow in the subsection for the types of encoding.
 
 \subsection{Spectral Decomposition}
-Lets say we have a Matrix A that we can diagonalize. 
+Let's say we have a Matrix A that we can diagonalize. 
 Then we can describe it by its spectrum which is a matrix with the eigenvalues in its diagonal
 \begin{equation} 
 \begin{split}
@@ -32,7 +32,7 @@ A &=  U D U^{\dagger} \\
 \end{equation}
 where $D$ is the diagonal matrix consisting of the eigenvalues and U consisting of eigenvectors of $A$.
 With this, we can describe a matrix only by its eigenvectors and eigenvalues. 
-Similary, we can also determine the inverse $A^{-1}$ by simply inverting the eigenvalues as such
+Similarly, we can also determine the inverse $A^{-1}$ by simply inverting the eigenvalues as such
 
 \begin{equation}
 \begin{split}
@@ -46,14 +46,14 @@ Similary, we can also determine the inverse $A^{-1}$ by simply inverting the eig
 
 
 Classically calculating the inverse matrice by inverting its eigenvalues is quite slow. 
-Though in the quantum version we will see, that this will play a big role in making our computation faster.
+Though in the quantum version, we will see, that this will play a big role in making our computation faster.
 
 \subsection{Types of Encoding}
 Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding and Amplitude encoding.
 
 \subsubsection{Hamiltonian Encoding}
 One type of Hamiltonian encoding is to encode a matrix into a unitary gate which can be implemented into logical quantum gates. 
-That means we can encode a matrix $A$ into our quatum system.
+That means we can encode a matrix $A$ into our quantum system.
 For example, a possible unitary gate of the matrix $A$ is
 \begin{equation}
     U = e^{iAt}
@@ -67,7 +67,7 @@ By using the binary representation of a number, we can directly write it into ou
     x \rightarrow \ket {x}
 \end{equation}
 where $x$ is a binary number.
-Lets say we have $x=3$ as a decimal number which can be represented as a binary number as $x_b = 11$.
+Let's say we have $x=3$ as a decimal number which can be represented as a binary number as $x_b = 11$.
 Then we can encode it in our quantum state as such
 \begin{equation}
     x=3 \xrightarrow[]{binary} x_b = 11 \xrightarrow[]{quantum\  state} \ket{x_b} = \ket{11}
@@ -85,13 +85,13 @@ Then we can use the elements of the vector $\vec x$ as coefficients of the state
 
 \subsection{Kronecker Delta}
 The Kronecker delta $\delta_{ij}$ is often used to simplify calculations with inner products $\braket{\psi | \phi}$.
-Basically, $\psi$ and $\phi$ can be handeled like normal vectors. 
-The inner product can calculate the angle between vectors, which means that for two orthogonal kets the inner product is $0$ as such
+Basically, $\psi$ and $\phi$ can be handled like normal vectors. 
+The inner product can calculate the angle between vectors, which means that for two orthogonal kets, the inner product is $0$ as such
 \begin{equation}
 \braket{\psi|\phi} = 0 \text{, if } \psi \perp \phi\\
 \end{equation}
 
-Lets say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are orthonormal to each other, then we have the following relation
+Let's say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are orthonormal to each other, then we have the following relation
 \begin{equation}
 \begin{split}
 \braket{E_i|E_i} &= 1\\
@@ -99,16 +99,16 @@ Lets say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are
 \end{split}
 \end{equation}
 
-We can see that if the indices are the same, which means the vectors are pointing into the same direction, the inner product is $1$.
-If they are orthogonal to each other, which means every other vector in an orthonormal basis, then the inner product is $0$.
-This can be summarized into the Kronecker delta
+We can see that if the indices are the same, which means the vectors are pointing in the same direction, the inner product is $1$.
+If they are orthogonal to each other, which means every other vector is an orthonormal basis, then the inner product is $0$.
+This can be summarized in the Kronecker delta
 \begin{equation}
     \delta_{ij} = \braket{E_i|E_j} = \begin{cases} 1 & \text{if } i=j\\ 0 & \text{if } i \neq j
 \end{cases}
 \end{equation}
 
-This can be quite usefull in calculations with orthonormal basises.
-When calculating inner products of an orthonormal basis, whilst the indices are not equal, terms are multiplied by $0$ and will be cancel out, simplifying the equation.
+This can be quite useful in calculations with orthonormal bases.
+When calculating inner products of an orthonormal basis, whilst the indices are not equal, terms are multiplied by $0$ and will be cancle out, simplifying the equation.
 
 \subsection{Etangled states}
 Entangled states can not be represented by a tensor product of individual states. 
@@ -125,7 +125,7 @@ As an example here we have a state $\ket{\Phi_1}$ which is not entangled, as we 
 \end{split}
 \end{equation}
 where $\ket +$ is the Hadmard  state $H \ket{0}$.
-On the other hand the following state $\Phi_2$ is entangled 
+On the other hand, the following state $\Phi_2$ is entangled 
 \begin{equation}
 \begin{split}
 \ket{\Phi_2} &= \frac{1}{\sqrt{2}} ( \ket{00} + \ket{11}) \\

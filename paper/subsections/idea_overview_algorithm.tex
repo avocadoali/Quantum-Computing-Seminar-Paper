@@ -1,4 +1,4 @@
-\section{ Overview of the algorihtm }
+\section{ Overview of the Algorithm}
 The following section will describe how the algorithm works in general.
 Firstly, it will specify the problem statement. 
 After that, it will describe a short mathematical explanation. 
@@ -29,7 +29,7 @@ Classical solutions involving spectral decomposition are not faster than other s
 Though, estimating eigenvalues and eigenvectors can be performed quite efficiently by quantum methods.
 Via amplitude amplification, QPE can be accelerated to generate the eigenvalues and eigenvectors in $\mathcal{O}(log_2 N)$ steps.
 
-In the quantum version the linear equation looks like this
+In the quantum version, the linear equation looks like this
 \begin{equation}
 \ket{x} = A^{-1}\ket{b}
 \end{equation}
@@ -39,20 +39,20 @@ We can not read every element to achieve the vector $\vec x$.
 So far we were able to perform everything in $\mathcal{O}(log_2 N)$.
 Reading out every entry of $\vec x$ would take $\mathcal{O} (N)$ steps which would destroy our speed up.
 But, as we are only interested in an approximation, we can compute an expectation value $\bra x M \ket x$, where $M$ is some linear operator. 
-With this method we can extract many statistical features like normalization, distribution of weights, moments, etc.
+With this method, we can extract many statistical features like normalization, distribution of weights, moments, etc.
 
 
 
 \subsection{Mathematical Overview}
 We will now look at a mathematical overview of what is happening in the quantum circuit.
-We will also assume that the matrix $A$ is hermitian. If $A$ is not hermitian, we can write $A$ as a hermitian like this
+We will also assume that the matrix $A$ is Hermitian. If $A$ is not hermitian, we can write $A$ as a hermitian like this
 
 \begin{equation}
 A^\dagger = \begin{pmatrix} 0 & A \\ \overline{A^T}& 0 \end{pmatrix}
 \end{equation}
 
 As already mentioned the matrix can now be described as a linear combination of its outer products of its eigenvectors and its eigenvalues.
-In the quantum version the formula looks like this
+In the quantum version, the formula looks like this
 
 \begin{equation}
 A = \sum_{i=0}^{N-1} \lambda_i \ket{u_i}\bra{u_i}
@@ -82,7 +82,7 @@ We now have all the tools to solve the equation, with the help of the Kronecker 
 \end{split}
 \end{equation}
 As we can see we can encode the solution $\ket x$ of our linear system into our quantum system quite nicely.
-That means, $\ket x$ can be calculated, only by determinining the eigenvectors and eigenvalues of A. 
+That means, $\ket x$ can be calculated, only by determining the eigenvectors and eigenvalues of A. 
 Using Quantum Phase Estimation, calculating the eigenvalues and eigenvectors for a unitary $U$ can be very efficient.
 
 
@@ -98,17 +98,17 @@ Using Quantum Phase Estimation, calculating the eigenvalues and eigenvectors for
 
 
 We will now take a look at how the algorithm is implemented as a quantum circuit. 
-We will firstly look at the sets of qubits needed for the algorithm. 
+We will first look at the sets of qubits needed for the algorithm. 
 Then, we will describe the phases of the procedure.
 
 \subsubsection{Registers}
 Fig.~\ref{ex_circ} shows the scheme of a simple quantum circuit for the HHL algorithm.
-We have three registers which describe three different sets of qubits in the quantum circuit.
+We have three registers that describe three different sets of qubits in the quantum circuit.
 
 The a-register contains the ancilla qubit. 
 It is used for the inversion of the eigenvalues and will be explained in detail later on.
 
-The c-register, oftentimes refered to as the clock-register, is used for the quantum phase estimation part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
+The c-register, oftentimes referred to as the clock-register, is used for the quantum phase estimation part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
 
 The b-register contains the $\vec{b}$ vector which is encoded into a quantum state $\ket{b}$. 
 After the whole HHL procedure is done the b-register will contain the solution state $\ket{x}$.
@@ -126,23 +126,23 @@ The procedure of the quantum circuit can be split into 5 phases:
 \item Measurement of $\ket x$
 \end{itemize}
 
-In the state preparation phase, the vector $\vec{b}$ will be encoded into a quantum state $\ket{b}$ and the $A$ matrix will be encoded as a hamiltonian, which is a unitary operator
+In the state preparation phase, the vector $\vec{b}$ will be encoded into a quantum state $\ket{b}$ and the $A$ matrix will be encoded as a Hamiltonian, which is a unitary operator
 $U=e^{iAt}$ into the QPE and IQPE operations.
 
 The Quantum Phase Estimation will then calculate the eigenvalues and eigenvectors of the A matrix.
 
 Then, we perform the rotation and invert the eigenvalues through rotary operations. 
 Unfortunately, these operations have a probability to fail, as they are not unitary operators.
-The ancilla will detect wether the rotation was successfull or not.
+The ancilla will detect whether the rotation was successful or not.
 It will either collapse to $\ket0$ or $\ket1$ for failure and success respectively.
-If the rotation is not successfull, the procedure has to be repeated from the beginning. 
-If the rotation was successfull we can continue the procedure. 
+If the rotation is not successful, the procedure has to be repeated from the beginning. 
+If the rotation was successful we can continue the procedure. 
 The problem is, that the qubits in the b-register and c-register are entangled. 
 This means that we cannot factorize the result into a tensor product of the c-register and b-register.
 As a result, we cannot convert the b-register into the $\ket 0$ / $\ket 1$ measurement basis with the desired amplitudes.
 We will need to uncompute the state so that it gives the right results in the $\ket 0$ / $\ket 1$ measurement during which the b-register and c-register will be unentangled.
-That means we have undo all operations until now to unentangle the states, keeping the inverted eigenvalues though.
+That means we have to undo all operations until now to unentangle the states, keeping the inverted eigenvalues though.
 
-This is achieved by the Inverse Quantum Phase Estimation which undos all steps we performed in the QPE phase, leaving us with the a $\ket{0...0}$ state in the c-register and the $\ket x$ state in the b-register.
+This is achieved by the Inverse Quantum Phase Estimation which undos all steps we performed in the QPE phase, leaving us with the $\ket{0...0}$ state in the c-register and the $\ket x$ state in the b-register.
 
 Lastly, the $\ket x$ state is to be measured. As mentioned earlier, we can only read out an approximation of an expectation value $\bra x M \ket x$.
