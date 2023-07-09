@@ -1,5 +1,5 @@
 \section{Quantum mechanical concepts}
-In this section, we will define some basic quantum mechanical concepts. 
+In this section, we will define some common quantum mechanical concepts. 
 
 \subsection{Hermitian matrix}
 A Hermitian matrix is a matrix, which is equal to its adjoint matrix. 
@@ -8,7 +8,7 @@ Thus, a hermitian matrix $A^\dagger$ is defined as such
 \begin{equation}
  A = \overline{A^T} \Leftrightarrow A^\dagger
 \end{equation}
-For example, the following matrix is Hermitian:
+For example, the following matrix is Hermitian
 \begin{equation}
 \begin{split}
 A &= \begin{bmatrix} 2 & 1-i \\ 1+i & 3 \\ \end{bmatrix} \\
@@ -45,8 +45,8 @@ Similarly, we can also determine the inverse $A^{-1}$ by simply inverting the ei
 \end{equation}
 
 
-Classically calculating the inverse matrice by inverting its eigenvalues is quite slow. 
-Though in the quantum version, we will see, that this will play a big role in making our computation faster.
+Classically calculating the inverse matrice by inverting its eigenvalues is comparably slow. 
+Though in the quantum version, we will see, that this will play a big role in making our computation faster, as computing eigenvalues can by done efficiently by QPE.
 
 \subsection{Types of Encoding}
 Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding and Amplitude encoding.

@@ -1,11 +1,34 @@
 #+TITLE: Seminar_paper_overview
 
 
-* Todo
-gpt fragen was fehlt in der ausarbeitung
-- physical constrains
--
+Betreff: Frage zur Seitenzahl meiner wissenschaftlichen Ausarbeitung
 
+Liebes Seminar Team,
+
+Ich wollte fragen wie streng die mindest Seitenanzahl der Ausarbeitung ist, da auf den Folien auch zwei verschiedene Angaben stehen.
+Einmal 8-10 Seiten und dann einmal mind. 10 Seiten.
+
+Außerdem wollte ich fragen ob sich diese Zahl nur auf die mindest Seiten Zahl oder auf die Seitenzahl von geschriebenen Text bezieht.
+Also ob man zum Beispiel die 10. Seite voll haben muss oder ab es reicht wenn die 10. Seite nur zur hälfte beschrieben ist.
+
+Falls die 10 Seiten unbedingt gefüllt werden müssten, hättet ihr noch irgendwelche Punkte die ich noch in meiner Ausarbeitung noch einbringen könnte?
+Derzeit bin ich insgesamt bei 8.5 Seiten geschriebenen Inhalt und bin am Ende von meinen bisherigen Recherchen.
+
+Im Anhang habe ich mal meine erste Draft von meiner Ausarbeitung hinzugefügt. Ich müsste noch einige Sachen überarbeiten, jedoch sollte das Große und Ganze schonmal stehen.
+
+
+Vielen Dank im Voraus für Eure Hilfe und Verständnis.
+
+Lg
+Alfred
+
+
+
+
+* Todo
+- Gibts statistiken zum vergleichen?
+- References einbauen
+- Grafik für beispiel einbauen
 
 
 
