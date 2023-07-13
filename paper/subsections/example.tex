@@ -1,4 +1,5 @@
 \section{Easy Example}
+
 In this section, we will go through an easy numerical example of the HHL algorithm.
 The quantum circuit that we will be using contains 4 qubits.
 The scheme of the quantum circuit is shown Fig. 2.
@@ -31,7 +32,7 @@ where $x_0$ and $x_1$ are the entries of $\vec x$.
 
 To make simplify our calculations, we will cheat by determining the eigenvectors and eigenvalues beforehand.
 Normally, the QPE would calculate these numbers, but as the main focus of this paper is the HHL algorithm, we will not go through each step of the QPE.
-For a more thorough walkthrough, please refer to the Qiskit example.
+For a more thorough walkthrough, please refer to the this example \cite{step}.
 The eigenvectors of the matrix $A$ are
 \begin{equation}
 \vec{u_0} = \begin{pmatrix} \frac{-1}{\sqrt{2}}\\ \frac{-1}{\sqrt{2}}\\ \end{pmatrix}\\
@@ -81,13 +82,25 @@ Thus, we are left with these states
 Now we can start with our procedure.
 
 \subsection{Numerical walkthrough}
-In Fig 2. we can see that we have 1 qubit each for the a-register and b-register, corresponding to the ancilla bit and the intput $\vec b$.
+
+In Fig.~\ref{ex_circ_numerical} we can see that we have 1 qubit each for the a-register and b-register, corresponding to the ancilla bit and the intput $\vec b$.
 The c-register has 2 qubits, as we have to store the two eigenvalues $\lambda_1$, $\lambda_2$ we calculated just now.
 Our starting state looks like this
 \begin{equation}
 \ket{\Psi_0} = \ket{0}_b\ \ket{00}_c\ \ket{0}_a = \ket{0000}
 \end{equation}
 as all registers are initalized with the zero state.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=8.5cm]{img/example_circuit_4_qubit_cropped.png}
+    \caption{4-Qubit Circuit}
+    \label{ex_circ_numerical}
+\end{figure}
+
+
+
 
 \subsubsection{State preparation}
     Here we have to encode our vector $\vec{b}$ into the quantum state $\ket{b}$, using amplitude encoding.

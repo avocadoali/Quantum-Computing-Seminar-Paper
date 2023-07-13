@@ -387,6 +387,11 @@ INPUT ./subsections/example.tex
 INPUT subsections/example.tex
 INPUT ./subsections/example.tex
 INPUT subsections/example.tex
+INPUT ./img/example_circuit_4_qubit_cropped.png
+INPUT ./img/example_circuit_4_qubit_cropped.png
+INPUT img/example_circuit_4_qubit_cropped.png
+INPUT ./img/example_circuit_4_qubit_cropped.png
+INPUT ./img/example_circuit_4_qubit_cropped.png
 INPUT ./subsections/evaluation.tex
 INPUT subsections/evaluation.tex
 INPUT ./subsections/evaluation.tex
