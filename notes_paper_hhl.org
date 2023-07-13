@@ -1,6 +1,24 @@
 #+TITLE: Seminar_paper_overview
 
 
+
+
+* Todo
+- Gibts statistiken zum vergleichen?
+- References einbauen
+- Grafik für beispiel einbauen
+- sag das paper in thematik einführen soll
+- gibt noch mathematische erklärungen
+
+
+
+
+
+
+
+
+
+
 Betreff: Frage zur Seitenzahl meiner wissenschaftlichen Ausarbeitung
 
 Liebes Seminar Team,
@@ -21,14 +39,6 @@ Vielen Dank im Voraus für Eure Hilfe und Verständnis.
 
 Lg
 Alfred
-
-
-
-
-* Todo
-- Gibts statistiken zum vergleichen?
-- References einbauen
-- Grafik für beispiel einbauen
 
 
 
