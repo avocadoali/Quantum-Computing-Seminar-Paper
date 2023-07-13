@@ -1,14 +1,11 @@
-
-
-
 \begin{abstract}
-Linear systems are a fundamental problem in math and can be found in subroutines in more complex tasks.
+Linear systems are a fundamental problem in math and can be found as subroutines in more complex tasks.
 Linear systems are in the form of $A \vec x = \vec b$, where $A$ is a given matrix, $\vec b$ is a given vector and $\vec x$ is the unknown to be solved.
 The HHL (Harrow, Hassidim, and Lloyd) algorithm is a quantum algorithm, that can solve these linear systems of equations exponentially faster than its classical counterpart. 
 Though, there are a few caveats to consider.
 We assume that we are only interested in solving for an expectation value of some operator on $\vec x$, e.g. $\vec{x}^\dagger M \vec x$ for some matrix $M$.
 That means we are not interested in the whole solution of $\vec x$.
-Also, we assume that the matrix $A$ is sparse and is in the size of $N\times N$. 
+Also, we assume that the matrix $A$ is sparse and has the size $N\times N$. 
 Given these requirements, classical algorithms can solve this problem in $\mathcal{O}(N )$, whereas the HHL algorithm can solve this problem in $\mathcal{O}(log (N) )$.
 This gives us an exponential speedup over the classical method.
 \end{abstract}
@@ -29,35 +26,33 @@ is that everything?
 Quantum computing has a lot of potential in many various domains. 
 It leverages the power of quantum superposition and entanglement to perform computations that a classical computer cannot simulate.
 In some cases, quantum computer algorithms can provide an exponential speed-up in comparison to common classical methods.
-The most famous case being Shor's algorithm for factoring large numbers, possibly cracking our current RSA encryption.
+The most famous case being Shor's algorithm for factoring large numbers, possibly cracking current RSA encryption.
 
 Solving linear systems is a fundamental subproblem in many scientific, engineering and mathematical disciplines. 
 Currently, the demand for processing data sets is increasing. 
 The sizes of these datasets which make up the equations, are growing well into terabytes and petabytes of data.
 Obtaining solutions for these kinds of problems can be very computationally expensive.
 Even an approximation of these solutions with $N$ unknowns takes at least $N$ timesteps, as even just outputting the solution vector takes at least N steps.
-
 Though, oftentimes we are not interested in the full solution vector. 
 For example, we can assume that we are only interested in a function, that determines the weights of some subsets in a specific region of the solution vector.
 Then we can achieve an exponential faster approximation by using quantum algorithms. 
 
-
 Especially in quantum machine learning, these kinds of problems arise very frequently. 
-Using large datasets finding patterns, classifying and clustering are very common methods, demanding a lot of resources. 
+Using large datasets, finding patterns, classifying and clustering are very common procedures, demanding a lot of resources. 
 Many of the quantum machine learning algorithms extend or use the following algorithm as a subroutine. 
 
-This paper will focus on an algorithm, which can estimate features of the solution vector of a linear system of equations.
+This paper will focus on explaining the algorithm, that can estimate features of the solution vector of a linear system of equations.
 The HHL algorithm, designed by Aram \textbf{H}arrow, Avinatan \textbf{H}assidim and Seth \textbf{L}loyd, was introduced in 2009. 
 It is one of the groundbreaking algorithms in quantum computing alongside Shor's factoring algorithm, Grover's search algorithm, and the Quantum Fourier Transform (QFT).
 
-Given an $N \times N$ sparse matrix $A$, the HHL algorithm runs in $\mathcal{O} (log (N))$, whilst the classical counterpart runs in $\mathcal{O} (N)$.
+
 This promises us an exponential speed-up over the commonly used classical method.
 
 \subsection{Outline}
-Firstly, this paper will discuss some quantum mechanical concepts.
-After that, we will give a rough overview of the HHL algorithm, specifying the problem in detail, and giving a mathematical idea of the algorithm, followed by an explanation of the quantum circuit.
+Firstly, this paper will discuss relevant quantum mechanical concepts for the HHL algorithm.
+After that, we will give a rough overview of the HHL algorithm, specifying the problem in detail, giving a mathematical idea of the algorithm, followed by an explanation of the quantum circuit.
 Then, we will discuss the HHL algorithm, going through all the phases of the algorithm in detail. 
-To increase the understanding of the HHL algorithm, a numerical example will be discussed with a 4 Qubit quantum circuit.
+To increase the understanding of the HHL algorithm, a numerical example will be discussed with a 4 qubit quantum circuit.
 Next, we evaluate and analyze its runtime by comparing the HHL algorithm to its classical counterpart. 
 Afterward, we will take an outlook at future works, exploring potential applications, and variations of the HHL algorithm and will relate it to IT security. 
 In the end, we will give a conclusion, summarizing our findings. 
@@ -65,6 +60,12 @@ In the end, we will give a conclusion, summarizing our findings.
 
 \begin{comment}
     
+Given an $N \times N$ sparse matrix $A$, the HHL algorithm runs in $\mathcal{O} (log (N))$, whilst the classical counterpart runs in $\mathcal{O} (N)$.
+
+
+
+
+
 Considering these constraints can be useful
 where N is large spares and condition is small 
 

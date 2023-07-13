@@ -1,13 +1,12 @@
-\section{Quantum mechanical concepts}
-In this section, we will define some common quantum mechanical concepts. 
-
+\section{Quantum computing concepts}
+In this section, we will define common quantum computing concepts, relevant for understanding the HHL algorithm.
 
 \subsection{Bra-ket Notation}
-The bra-ket notation is commonly used to represent quantum states, operators and measurements.
-To begin with, a qubit can be represented by a 2d-vector $\vec v$ which can be written in its ket form $\ket v$.
-The most common kets are the $0$ and $1$ ket, which are written as $\ket 0$ and $\ket 1$ respectively.
+The \textit{bra-ket} notation is commonly used to represent quantum states, operators and measurements.
+To begin with, a qubit can be represented by a 2d-vector $\vec v$ which can be written in its \textit{ket} form $\ket v$.
+The most common \textit{kets} are the $0$ and $1$ \textit{kets}, which are written as $\ket 0$ and $\ket 1$ respectively.
 These are the basis states that represent the 0 and 1 bit on a classical computer. 
-As already mentionend, we can think of a ket as a vector. 
+As already mentionend, we can think of a \textit{ket} as a vector. 
 In vector form $\ket 0$ and $\ket 1$ are the defined by these vectors as such
 
 \begin{equation}
@@ -26,14 +25,14 @@ For example, if we have a quantum computer with 4 qubits which are all initializ
 \begin{equation}
     \ket \Psi = \ket 0 \otimes \ket 0 \otimes \ket 0 \otimes \ket 0 = \ket{0000}
 \end{equation}
-where $\otimes$ is the tensor product, which is often times simplified into one ket.
+where $\otimes$ is the tensor product, which is often times simplified into one state.
 
 The inner product of two vectors $\vec a$ and $\vec b$ is represented in braket notation as such 
 \begin{equation}
     \braket{a | b}
 \end{equation}
 where $\bra a$ as the \textit{bra} and $\ket b$ is the \textit{ket}.
-The \textit{bra}vector is defined as the complex conjugate of the \textit{ket} vector. 
+The \textit{bra} vector is defined as the complex conjugate of the \textit{ket} vector. 
 For example
 \begin{equation}
   \ket a=  \begin{pmatrix}1\\-i\end{pmatrix}  \Rightarrow \bra a = \begin{pmatrix}1 & i\end{pmatrix}
@@ -42,17 +41,18 @@ Note that the vectors contain complex numbers.
 
 \subsection{Superposition and Quantum Gate}
 As we already know qubits of a quantum computer can be in states \textit{between} 0 and 1. 
-These states are superpositions where a qubit is either 0 or 1.
-Mathematically, superpositions can be represented by a linear combination of the basis states. 
+These states are superpositions where a qubit is neither 0 nor 1.
+Mathematically, superpositions can be represented by a linear combination of basis states. 
 The most common superposition is created by the Hadamard gate, which puts a basis state into an equal superposition. 
-The Hadamard gate looks likes this
+Meaning, the probability of the qubit collapsing to either 0 or 1 is $\frac 1 2$.
+The Hadamard gate $H$ looks likes this
 \begin{equation}
-    \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}  
+    H = \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}  
 \end{equation}
 
 Note that a quantum gate is represented by a matrix.
 That means, if we want to apply quantum gates on qubits, we calculate transformations of vectors by matrices. 
-Lets apply the Hadamard gate to the basis state $\ket 0$
+Lets apply the Hadamard gate $H$ to the basis state $\ket 0$
 \begin{equation}
    \begin{split}
    H \ket 0 &=  \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix} \begin{pmatrix}1\\0\end{pmatrix}   
@@ -72,6 +72,11 @@ Thus, a hermitian matrix $A^\dagger$ is defined as such
  A = \overline{A^T} \Leftrightarrow A^\dagger
 \end{equation}
 For example, the following matrix is Hermitian
+
+
+
+
+
 \begin{equation}
 \begin{split}
 A &= \begin{bmatrix} 2 & 1-i \\ 1+i & 3 \\ \end{bmatrix} \\
@@ -82,10 +87,10 @@ A &= \begin{bmatrix} 2 & 1-i \\ 1+i & 3 \\ \end{bmatrix} \\
 \end{equation}
 
 Hermitian matrices are important as we can easily encode them into quantum systems.
-More details will follow in the subsection for the types of encoding.
+More details will follow in the subsection for types of encoding.
 
 \subsection{Spectral Decomposition}
-Let's say we have a Matrix A that we can diagonalize. 
+Let's say we have a Matrix $A$ that we can diagonalize. 
 Then we can describe it by its spectrum which is a matrix with the eigenvalues in its diagonal
 \begin{equation} 
 \begin{split}
@@ -109,13 +114,13 @@ Similarly, we can also determine the inverse $A^{-1}$ by simply inverting the ei
 
 
 Classically calculating the inverse matrice by inverting its eigenvalues is comparably slow. 
-Though in the quantum version, we will see, that this will play a big role in making our computation faster, as computing eigenvalues can by done efficiently by QPE.
+Though in the quantum version, we will see, that this will play a big role in making our computation faster, as computing eigenvalues can by done efficiently by Quantum Phase Estimation (QPE).
 
 \subsection{Types of Encoding}
 Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding and Amplitude encoding.
 
 \subsubsection{Hamiltonian Encoding}
-One type of Hamiltonian encoding is to encode a matrix into a unitary gate which can be implemented into logical quantum gates. 
+One type of Hamiltonian encoding is to encode a matrix into a unitary gate which can be implemented into logical quantum gate. 
 That means we can encode a matrix $A$ into our quantum system.
 For example, a possible unitary gate of the matrix $A$ is
 \begin{equation}
@@ -149,12 +154,13 @@ Then we can use the elements of the vector $\vec x$ as coefficients of the state
 \subsection{Kronecker Delta}
 The Kronecker delta $\delta_{ij}$ is often used to simplify calculations with inner products $\braket{\psi | \phi}$.
 Basically, $\psi$ and $\phi$ can be handled like normal vectors. 
-The inner product can calculate the angle between vectors, which means that for two orthogonal kets, the inner product is $0$ as such
+The inner product calculates the angle between vectors which means that, for two orthogonal kets, the inner product is $0$ as such
 \begin{equation}
 \braket{\psi|\phi} = 0 \text{, if } \psi \perp \phi\\
 \end{equation}
 
-Let's say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are orthonormal to each other, then we have the following relation
+Let's say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors are orthonormal to each other.
+Then, we have the following relation
 \begin{equation}
 \begin{split}
 \braket{E_i|E_i} &= 1\\
@@ -163,7 +169,7 @@ Let's say we have an orthonormal basis $\ket{E_i}$, meaning all basis vectors ar
 \end{equation}
 
 We can see that if the indices are the same, which means the vectors are pointing in the same direction, the inner product is $1$.
-If they are orthogonal to each other, which means every other vector is an orthonormal basis, then the inner product is $0$.
+If they are orthogonal to each other, meaning every other vector is an orthonormal basis, then the inner product is $0$.
 This can be summarized in the Kronecker delta
 \begin{equation}
     \delta_{ij} = \braket{E_i|E_j} = \begin{cases} 1 & \text{if } i=j\\ 0 & \text{if } i \neq j
