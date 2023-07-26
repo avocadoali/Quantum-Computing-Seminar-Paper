@@ -12,6 +12,7 @@ In the beginning, they are all initialized in their zero states, as
 &= \ket{0}_b^{{\otimes n_b}}\ \ket{0}_c^{\otimes b}\ \ket{0}_a 
 \end{split}
 \end{equation}
+
 We now have to load the vector $\vec{b}$ into the b-register. 
 This is achieved by amplitude encoding
 \begin{equation}
@@ -27,17 +28,15 @@ Thus, $\ket b$ is loaded into the b-register, as such
 \ket{\Psi_1} = \ket{b}_b\ \ket{0\dots0}_c\ \ket{0}_a
 \end{equation}
 
-We now continue with the QPE. 
-
 \subsection{Quantum Phase Estimation}
-We will only briefly go through the specifics  and will not discuss each step of the QPE in detail , as this is not the main topic of this paper. 
-For further explanations refer to this paper \cite{qpe}, explaining QPE in detail.
+We will only briefly go through the specifics  and will not discuss each step of the QPE in detail, as this is not the main topic of this paper. 
+For further explanations refer to \cite{qpe}, explaining QPE in detail.
 
-As already mentioned, the QPE is a procedure to evaluate an estimate of eigenvalues. 
-It consists of three phases namely, creating superpositions of the clock-bits via Hadamard gates, controlled rotation via the unitary U and the IQFT.
+In summary, the QPE is a procedure to evaluate an estimate of eigenvalues. 
+It consists of three phases namely, creating superpositions of the clock-bits via Hadamard gates, controlled rotation via the unitary U and IQFT.
 After QPE we will have an estimate of the eigenvalues of the unitary $U$. 
-As we have encoded $A$ as a Hamiltonian $U = e^{iAt}$, the phase of the eigenvalue of U is proportional to the eigenvalue of $A$.
-Thus, we have to define a scaled version of our eigenvalues $\lambda_j$.
+As we have encoded $A$ as a Hamiltonian into $U = e^{iAt}$, the phase of the eigenvalue of U is proportional to the eigenvalue of $A$.
+Thus, we have to define a scaled version of our eigenvalues $\lambda_j$
 \begin{equation}
 \widetilde{\lambda_j} = \frac {N\lambda_jt}{2\pi}
 \end{equation}
@@ -53,7 +52,7 @@ Thus, the eigenvalues of $A$ will be stored in the c-register after QPE as
 \end{equation}
 
 Notice, that the b-register is in the same form as we have discussed in the previous section. 
-The b-register represents the $\ket b$ state in the eigenbasis $\ket{u_j}$ of $A$ like this
+The b-register represents the $\ket b$ state in the eigenbasis $\ket{u_j}$ of $A$ as
 \begin{equation}
 \ket{b} = \sum_{j=0}^{N-1} b_j\ket{u_j}
 \end{equation}
@@ -64,17 +63,15 @@ Now that we have achieved the eigenvalues and have represented our $\ket{b}$ in 
 \subsection{Inversion of the eigenvalues}
 In the next step, we invert the eigenvalues.
 This is achieved by the rotation of the ancilla qubit in the a-register by the eigenvalues in the c-register.
-The state of the registers after the rotation looks, like this
+The state of the registers after the rotation is
 
 \begin{equation}
 \ket{\Psi_3} = \sum_{j=0}^{N-1} b_j \ket{u_j}_b {\ket{\widetilde{\lambda_j}}}_c \left(\sqrt{1-\frac{C^2}{\widetilde{\lambda_j^2}}}\ket{0}_a + \frac{C}{\widetilde{\lambda_j}} \ket{1}_a\right)
 \end{equation}
-
 where $C$ is a constant that should be chosen to be as large as possible to increase the success probability.
 Currently, the state of the a-register can either collapse into $\ket 1$ or $\ket 0$. 
 The probability of the a-register collapsing to $\ket 1$ is $\left|\frac C {\widetilde{\lambda_j}}\right|^2$.
 If the ancilla qubit collapses to $\ket 0$, the whole procedure has to be repeated from the beginning. 
-As mentioned earlier this has to be done, because the rotation process is not unitary and has a probability to fail.
 
 We assume that our rotation process was successful and the ancilla bit collapses to $\ket 1$. 
 The registers will look as such
@@ -101,7 +98,7 @@ That means our solution is already encoded in our registers.
 The problem here is, that we cannot read the solution out yet.
 This has to do with the states in the b-register and c-register being entangled with each other. 
 Thus, we cannot convert the b-register into a $\ket0 / \ket 1$ measurement.
-In the following, we have to undo all operations to unentangle the state in the b-register and c-register, to achieve the correct result.
+
 
 \subsection{Inverse Quantum Phase estimation.}
 The unentangling of the registers is achieved through the IQPE, which backtracks all calculations of the QPE.
@@ -121,7 +118,7 @@ The c-register however is reset to the zero state $\ket{0}^{\otimes n}_c$ as in 
 It is now unentangled from the b-register.
 The b-register now contains the solution $\ket x$ after the uncomputation and can be measured correctly.
 
-We can furthermore simplify the term as we assume that  $C$ is real and that the eigenvectors $\ket{u_i}$, and the $\ket b$ state are normalized.
+We can furthermore simplify the epxression as we assume that  $C$ is real and that the eigenvectors $\ket{u_i}$, and the $\ket b$ state are normalized.
 Then we can simplify it to
 
 \begin{equation}

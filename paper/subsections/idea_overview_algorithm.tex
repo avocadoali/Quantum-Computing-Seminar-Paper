@@ -1,8 +1,8 @@
 \section{ Overview of the Algorithm}
 In the following section, we will describe how the algorithm works in general.
-Firstly, we will specify the problem statement. 
-After that, we will describe a short mathematical explanation. 
-Then, we will take a look at the quantum circuit, explaining all the phases of the circuit.
+Firstly, we will specify the problem statement in detail.
+After that, we will take a look at a mathematical summary of the algorithm. 
+Lastly, we will discuss the quantum circuit, explaining the phases of the circuit.
 
 \subsection{Problem statement}
 
@@ -10,13 +10,12 @@ Given an $N\times N$ hamiltonian matrix $A$ and vector $\vec b$, we want to solv
 \begin{equation}
 A \vec{x} = \vec{b}
 \end{equation}
+
 To solve for x the equation can be rewritten as
 \begin{equation}
 \vec{x} = A^{-1}\vec{b}
 \end{equation}
-
-Note that to encode $\vec b$ we need $\mathcal{O}(log_2 N)$ qubits.
-As described earlier the Hermitian matrix $A^{-1}$ can be split into its spectral decomposition. 
+As described earlier, the Hermitian matrix $A^{-1}$ can be split into its spectral decomposition. 
 $A^{-1}$ can be represented in terms of its eigenvectors $U_1 ... U_n$ and inverted eigenvectors $\lambda_1^{-1 } ... \lambda_n^{-1}$.
 \begin{equation} 
  A^{-1} = \begin{pmatrix} U^\dagger_1 \\ \vdots \\ U^\dagger_n \end{pmatrix}
@@ -33,21 +32,22 @@ In the quantum version, the linear equation looks like this
 \begin{equation}
 \ket{x} = A^{-1}\ket{b}
 \end{equation}
-where $\ket b$ and $\ket x$ are the quantum state of the $\vec b$ and $\vec x$ vectors respectively.
-Note that  $\ket x$ is just a quantum state. 
-We can not read every element to achieve the vector $\vec x$. 
+where $\ket b$ and $\ket x$ are the quantum states of the $\vec b$ and $\vec x$ vectors respectively.
+% Note that  $\ket x$ is just a quantum state, thus we can not read every element to achieve the vector $\vec x$. 
 
-So far, we were able to perform everything in $\mathcal{O}(log_2 N)$.
-Reading out every entry of $\vec x$ would take $\mathcal{O} (N)$ steps which would destroy our speed up.
+To encode $\vec b$ into a quantum state $\ket b$ we only need $\mathcal{O}(log_2 N)$ qubits.
+Hence, we are able to perform everything in $\mathcal{O}(log_2 N)$ so far. 
+Comparing that to the fastest classical methods, which run in $\mathcal{O} (N)$, this promises us an exponential speed up.
+However, there are some caveats to consider. 
+Reading out the whole solution vector, meaning just reading out every entry of $\vec x$ would take $\mathcal{O} (N)$ steps, which would destroy our speed up.
 But, as we are only interested in an approximation, we can compute an expectation value $\bra x M \ket x$, where $M$ is some linear operator. 
-With this method, we can extract many statistical features like normalization, distribution of weights, moments, etc.
+With this method, we can extract many statistical features like normalization, distribution of weights, moments, etc, without extracting all entries of the solution vector.
 
 
 
 \subsection{Mathematical Overview}
 We will now look at a mathematical overview of what is happening in the quantum circuit.
-
-We will also assume that the matrix $A$ is Hermitian. If $A$ is not hermitian, we can write $A$ as a hermitian like this
+We assume that the matrix $A$ is Hermitian. If $A$ is not hermitian, we can write $A$ as a hermitian like this
 
 \begin{equation}
 A^\dagger = \begin{pmatrix} 0 & A \\ \overline{A^T}& 0 \end{pmatrix}
@@ -60,18 +60,18 @@ In the quantum version, the formula looks like this
 A = \sum_{i=0}^{N-1} \lambda_i \ket{u_i}\bra{u_i}
 \end{equation}
 where $\ket u_i  \bra u_i$ are the outer products of $A$, $\lambda_i$ are the eigenvalues of $A$ and $N$ is the size of the matrix $A$.
-We can rewrite the formula for the inverse $A^{-1}$, as such
+For the inverse $A^{-1}$, we can rewrite the formula in the following 
 
 \begin{equation}
 A^{-1} = \sum_{i=0}^{N-1} \lambda_i^{-1} \ket{u_i}\bra{u_i}
 \end{equation}
 
-Similary, $\ket b$ can be expressed in the eigenbasis of $A$, like this
+Similary, $\ket b$ can be expressed in the eigenbasis of $A$ as 
 \begin{equation}
 \ket{b} = \sum_{j=0}^{N-1} b_j\ket{u_j}
 \end{equation}
 
-We now have all the tools to solve the equation, with the help of the Kronecker delta $\delta_{ij}$, by inserting the definition of $A^{-1}$ and $\ket b$ into our original equation,
+With the help of the Kronecker delta $\delta_{ij}$, we have all the tools to solve the equation, by inserting the definition of $A^{-1}$ and $\ket b$ into our original equation,
 \begin{equation}
 \begin{split}
 \ket{x} &= A^{-1} \ket{b}\\
@@ -82,9 +82,9 @@ We now have all the tools to solve the equation, with the help of the Kronecker 
 &=\sum_{i=0}^{N-1} \lambda_i^{-1} b_j\ket{u_j}\\
 \end{split}
 \end{equation}
-As we can see we can encode the solution $\ket x$ of our linear system into our quantum system quite nicely.
-That means, $\ket x$ can be calculated, only by determining the eigenvectors and eigenvalues of A. 
-Using Quantum Phase Estimation, calculating the eigenvalues and eigenvectors for a unitary $U$ can be very efficient.
+
+As seen, the solution vector $\ket x$ can be calculated only by determining the eigenvectors and eigenvalues of A. 
+Using QPE, calculating the eigenvalues and eigenvectors can be very efficient.
 
 \subsection{Quantum Circuit}
 
@@ -95,9 +95,8 @@ Using Quantum Phase Estimation, calculating the eigenvalues and eigenvectors for
     \label{ex_circ}
 \end{figure}
 
-
-We will now take a look at how the algorithm is implemented as a quantum circuit. 
-First, we will look at the sets of qubits needed for the algorithm. 
+Now we will take a look at how the algorithm is implemented as a quantum circuit. 
+Firstly, we will look at the registers of the quantum circuits. 
 Then, we will describe the phases of the procedure.
 
 \subsubsection{Registers}
@@ -107,10 +106,10 @@ We have three registers that describe three different sets of qubits in the quan
 The a-register contains the ancilla qubit. 
 It is used for the inversion of the eigenvalues and will be explained in detail later on.
 
-The c-register, oftentimes referred to as the clock-register, is used for the quantum phase estimation part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
+The c-register, oftentimes referred to as the clock-register, is used for the QPE part. It is related to the time (clock) of the controlled rotation of the qubits and will store the eigenvalues after performing QPE.
 
 The b-register contains the $\vec{b}$ vector which is encoded into a quantum state $\ket{b}$. 
-After the whole HHL procedure is done the b-register will contain the solution state $\ket{x}$.
+After the whole HHL procedure is done, the b-register will contain the solution state $\ket{x}$.
 
 
 
@@ -130,16 +129,15 @@ $U=e^{iAt}$ into the QPE and IQPE operations.
 
 Then, the QPE will calculate the eigenvalues and eigenvectors of the A matrix.
 
-Afterward, we perform the rotation and invert the eigenvalues through rotary operations. 
-Unfortunately, these operations have a probability to fail, as they are not unitary operators.
-The ancilla will detect whether the rotation was successful or not.
-It will either collapse to $\ket0$ or $\ket1$ for failure and success respectively.
+Afterward, we perform the inversion of the eigenvalues through rotary operations. 
+These operations have a probability to fail, as they are not unitary operators.
+The ancilla will detect whether the rotation was successful or not and will either collapse to $\ket0$ or $\ket1$ for failure and success.
 If the rotation is not successful, the procedure has to be repeated from the beginning. 
 If the rotation was successful we can continue the procedure. 
 The problem is, that the qubits in the b-register and c-register are entangled. 
 This means that we cannot factorize the result into a tensor product of the c-register and b-register.
 As a result, we cannot convert the b-register into the $\ket 0$ / $\ket 1$ measurement basis with the desired amplitudes.
-We will need to uncompute the state, meaining we have to undo all operations up until now to unentangle the states, whilst keeping the inverted eigenvalues.
+We will need to uncompute the state, thus, we have to undo all operations up until now, to unentangle the states whilst keeping the inverted eigenvalues.
 
 This is achieved by the IQPE which undos all steps we performed in the QPE phase, leaving us with the $\ket{0...0}$ state in the c-register and the $\ket x$ state in the b-register.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.3)  13 JUL 2023 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.3)  26 JUL 2023 21:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -287,8 +287,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ] [2]) (./subsections/idea_overview_algorithm.tex [3]
-Underfull \vbox (badness 5175) has occurred while \output is active []
-
 <img/example_circuit_cropped.png, id=27, 948.54375pt x 361.35pt>
 File: img/example_circuit_cropped.png Graphic file (type png)
 <use img/example_circuit_cropped.png>
@@ -298,14 +296,14 @@ Package pdftex.def Info: img/example_circuit_cropped.png  used on input line 93.
 <img/example_circuit_4_qubit_cropped.png, id=39, 948.54375pt x 361.35pt>
 File: img/example_circuit_4_qubit_cropped.png Graphic file (type png)
 <use img/example_circuit_4_qubit_cropped.png>
-Package pdftex.def Info: img/example_circuit_4_qubit_cropped.png  used on input line 97.
+Package pdftex.def Info: img/example_circuit_4_qubit_cropped.png  used on input line 96.
 (pdftex.def)             Requested size: 241.84842pt x 92.12924pt.
 
-Overfull \hbox (17.95364pt too wide) detected at line 151
+Overfull \hbox (17.95364pt too wide) detected at line 148
 []
  []
 
-[7 <./img/example_circuit_4_qubit_cropped.png>]) (./subsections/evaluation.tex Excluding 'comment' comment.) (./subsections/applications_variations.tex [8]) (./subsections/conclusion.tex [9]) (./subsections/references.tex Excluding 'comment' comment.)
+[7 <./img/example_circuit_4_qubit_cropped.png>]) (./subsections/evaluation.tex Excluding 'comment' comment.) (./subsections/applications_variations.tex [8]) (./subsections/conclusion.tex) (./subsections/references.tex [9] Excluding 'comment' comment.)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -333,7 +331,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  57i,23n,62p,421b,278s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 375030 bytes).
+Output written on main.pdf (10 pages, 374243 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream

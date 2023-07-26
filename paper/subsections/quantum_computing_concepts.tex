@@ -180,11 +180,14 @@ This can be quite useful in calculations with orthonormal bases.
 When calculating inner products of an orthonormal basis, whilst the indices are not equal, terms are multiplied by $0$ and will be cancle out, simplifying the equation.
 
 \subsection{Etangled states}
-Entangled states can not be represented by a tensor product of individual states. 
-Entangled states are defined as such
+Entanglement is a physical property of quantum particles. 
+When particles are entangled, they cannot be described without considering the state of the other particle.
+Mathematically, entangled states can not be represented by a tensor product of individual states and are defined as such,
 \begin{equation}
     \ket{\Phi} \neq \ket{\phi} \ket{\psi}
 \end{equation}
+where $\ket{\Phi}$ is the quantum state of the system, while $\ket \phi$ and  $\ket \psi$ are individual states.
+
 As an example here we have a state $\ket{\Phi_1}$ which is not entangled, as we can represent it by two other states
 \begin{equation}
 \begin{split}
@@ -194,11 +197,11 @@ As an example here we have a state $\ket{\Phi_1}$ which is not entangled, as we 
 \end{split}
 \end{equation}
 where $\ket +$ is the Hadmard  state $H \ket{0}$.
-On the other hand, the following state $\Phi_2$ is entangled 
+On the other hand, the following state $\ket{\Phi_2}$ is entangled 
 \begin{equation}
 \begin{split}
 \ket{\Phi_2} &= \frac{1}{\sqrt{2}} ( \ket{00} + \ket{11}) \\
-&\neq \ket{\alpha}\ket{\beta}
+&\neq \ket{\phi}\ket{\psi}
 \end{split}
 \end{equation}
 as it cannot be represented by other states.

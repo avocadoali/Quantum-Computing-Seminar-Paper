@@ -5,34 +5,32 @@ Then we will delve into different variations and optimizations which can improve
 Lastly, we will discuss some broad perspective, that the HHL algorithm offers in the field of quantum computing. 
 
 \subsection{Applications}
-The main problem wih the HHL algorithm is, that it does not output the full solution vector, but rather the solutino state $\ket x$.
-Not to be forgotten, is that the matrix $A$ has to be sparse for the HHL algorithm to work efficiently.
+The main problem wih the HHL algorithm is, that it does not output the full solution vector, but rather the solution state $\ket x$.
+Not to be forgotten is, that the matrix $A$ has to be sparse for the HHL algorithm to work efficiently.
 But in some cases these constraints are not a problem and can therefore be solved by the HHL algorithm.
 We will now discuss some examples that utilize the algorithm. 
-
 
     \subsubsection{Analyzing Large Sparse Electrical Networks}
     The HHL algorithm can be applied to analyze large sparse electrical networks, where we are interested in an estimate of a specific feature.
     Electrical networks consist of vast numbers of interconnected components, like generators, transformers, transmission lines, etc. 
     Though, these networks have a high number of components, they have a relative low amount of connections between the each other.
-    Thus, systems can be modeld as a graph which correspond to large sparse matrices.
+    Thus, systems can be modeled as a graph which correspond to large sparse matrices.
     By being able to calculate the inverse of a matrix $A^{-1}$ efficienly, we can deduct many network properties, such as resistance. 
     This can help us to further optimize the electrical powersystem.
     Conventionally, we would have to rely on iterative algorithms, which are as we saw earlier, exponentially slower in this specific case.
     
     \subsubsection{Machine Learning (Least-Square Estimation)}
-    In the field of machine learning the HHL algorithm can also help improve calculations. 
+    In the field of machine learning the HHL algorithm can also massively improve calculations. 
     The HHL algorithm also plays a significant role in the field of machine learning, as it can improve computational intensive calculations.
-    For example in least-square estimation, the HHL algorithm can be used to estimates of inverse matrices. 
+    For example in least-square estimation, the HHL algorithm can be used to determine estimates of inverse matrices. 
     This can be very helpful in data fitting tasks, enabling efficient parameter estimation and model optimization.
     
 All in all, finding more applications for the HHL algorithm is crucial, given its specific constraints and promising capabilities.
 
-
 \subsection{Variations and Optimizations}
 Current research and developments have been able to find variations and optimizations to the HHL algorithm.
 These changes have brought more efficient ways to perform the HHL algorithm and expand its applicability.
-We will now discuss some examples of improvements done to the HHl algorithm.
+We will now discuss some examples of improvements done to the HHL algorithm.
 
     \subsubsection{Ancilla Bit Requirement} 
     Certain variants allow the HHL algorithm to operate without an ancilla bit.
@@ -59,7 +57,7 @@ We will now discuss some examples how one could utilize the algorithm IT securit
     The protocol achieves this by using linear systems as a subroutine to achieve secrecy.
 
     Zero knowledge proofs are methods that enable a party to demonstrate certain features to another party without revealing any other information except the validity of that feature.
-    This can be usefull to verify your identity without giving out any personal data.
+    This can be useful to verify your identity without giving out any personal data.
     Oftentimes these zero knowledge proofs can be modeled in linear systems, which then can be processed by the HHL algorithm.
 
     \subsubsection{Pattern recognition for fraud dection}
