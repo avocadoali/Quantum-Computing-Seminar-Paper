@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.3)  30 JUL 2023 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.3)  30 JUL 2023 23:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -401,7 +401,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ] [2]) (./subsections/idea_overview_algorithm.tex [3]
-<img/example_circuit_cropped.png, id=260, 948.54375pt x 361.35pt>
+<img/example_circuit_cropped.png, id=259, 948.54375pt x 361.35pt>
 File: img/example_circuit_cropped.png Graphic file (type png)
 <use img/example_circuit_cropped.png>
 Package pdftex.def Info: img/example_circuit_cropped.png  used on input line 93.
@@ -418,12 +418,22 @@ Overfull \hbox (17.95364pt too wide) detected at line 148
  []
 
 [7 <./img/example_circuit_4_qubit_cropped.png>]) (./subsections/evaluation.tex Excluding 'comment' comment.) (./subsections/applications_variations.tex [8]) (./subsections/conclusion.tex) (./subsections/references.tex [9]
-Underfull \hbox (badness 1997) in paragraph at lines 9--15
-[]\OT1/ptm/m/n/8 Qiskit Com-mu-nity, "Solv-ing Lin-ear Sys-tems of Equa-tions us-ing
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
+[]\OT1/ptm/m/n/8 Qiskit Com-mu-nity, "Solv-ing Lin-ear Sys-tems of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--15
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
+\OT1/ptm/m/n/8 Equa-tions us-ing HHL and its Qiskit Im-ple-men-ta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
+\OT1/ptm/m/n/8 tion", [On-line]. Avail-able: []$https : / / learn . qiskit . org/$[][]$course /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
 \OT1/ptm/m/n/8 ch-[]applications$[][]$/solving-[]linear-[]systems-[]of-[]equations-[]$[][]$using-[]hhl-[]and-[]its-[]$[]
  []
 
@@ -452,12 +462,12 @@ Here is how much of TeX's memory you used:
  31191 multiletter control sequences out of 15000+600000
  551936 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,23n,76p,421b,570s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,23n,76p,421b,572s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 382913 bytes).
+Output written on main.pdf (10 pages, 383680 bytes).
 PDF statistics:
- 503 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
+ 515 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
  140 named destinations out of 1000 (max. 500000)
  403 words of extra memory for PDF output out of 10000 (max. 10000000)
 

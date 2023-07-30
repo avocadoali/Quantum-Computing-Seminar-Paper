@@ -678,6 +678,8 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
@@ -687,7 +689,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmbi8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./subsections/idea_overview_algorithm.tex
@@ -699,7 +700,6 @@ INPUT ./img/example_circuit_cropped.png
 INPUT img/example_circuit_cropped.png
 INPUT ./img/example_circuit_cropped.png
 INPUT ./img/example_circuit_cropped.png
-INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT ./subsections/hhl_algorithm.tex
 INPUT subsections/hhl_algorithm.tex
 INPUT ./subsections/hhl_algorithm.tex
