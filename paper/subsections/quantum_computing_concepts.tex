@@ -5,9 +5,9 @@ In this section, we will define common quantum computing concepts, relevant for 
 The \textit{bra-ket} notation is commonly used to represent quantum states, operators and measurements.
 To begin with, a qubit can be represented by a 2d-vector $\vec v$ which can be written in its \textit{ket} form $\ket v$.
 The most common \textit{kets} are the $0$ and $1$ \textit{kets}, which are written as $\ket 0$ and $\ket 1$ respectively.
-These are the basis states that represent the 0 and 1 bit on a classical computer. 
-As already mentionend, we can think of a \textit{ket} as a vector. 
-In vector form $\ket 0$ and $\ket 1$ are the defined by these vectors as such
+These are the basis states that represent the 0 and 1 bits on a classical computer. 
+As already mentioned, we can think of a \textit{ket} as a vector. 
+In vector form $\ket 0$ and $\ket 1$ are defined by these vectors as such
 
 \begin{equation}
   \ket 0  = \begin{pmatrix}1\\0\end{pmatrix} 
@@ -19,8 +19,8 @@ In vector form $\ket 0$ and $\ket 1$ are the defined by these vectors as such
 
 Graphically we can think of these two qubits $\ket 0$ and $\ket 1$ as two orthonormal vectors one pointing upwards and the other to the right, whilst having the length of 1.
 
-Multiple qubits can be combined to a quantum state often refered to as $\ket \Psi$, describing the state of a quantum computer. 
-For example, if we have a quantum computer with 4 qubits which are all initialized to the 0 state, where the state $\ket \Psi$ would look as such
+Multiple qubits can be combined into a quantum state often referred to as $\ket \Psi$, describing the state of a quantum computer. 
+For example, if we have a quantum computer with 4 qubits which are all initialized to the 0 states, where the state $\ket \Psi$ would look as such
 
 \begin{equation}
     \ket \Psi = \ket 0 \otimes \ket 0 \otimes \ket 0 \otimes \ket 0 = \ket{0000}
@@ -44,15 +44,15 @@ As we already know, qubits of a quantum computer can be in states \textit{betwee
 These states are superpositions where a qubit is neither really 0 nor 1.
 Mathematically, superpositions can be represented by a linear combination of basis states. 
 The most common superposition is created by the Hadamard gate, which puts a basis state into an equal superposition. 
-Meaning, the probability of the qubit collapsing to either 0 or 1 is $\frac 1 2$.
-The Hadamard gate $H$ looks likes this
+This means, the probability of the qubit collapsing to either 0 or 1 is $\frac 1 2$.
+The Hadamard gate $H$ looks like this
 \begin{equation}
     H = \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}  
 \end{equation}
 
 Note that a quantum gate is represented by a matrix.
 That means, if we want to apply quantum gates on qubits, we calculate transformations of vectors by matrices. 
-Lets apply the Hadamard gate $H$ to the basis state $\ket 0$
+Let us apply the Hadamard gate $H$ to the basis state $\ket 0$
 \begin{equation}
    \begin{split}
    H \ket 0 &=  \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix} \begin{pmatrix}1\\0\end{pmatrix}   
@@ -61,7 +61,7 @@ Lets apply the Hadamard gate $H$ to the basis state $\ket 0$
    \end{split}
 \end{equation}
 Graphically, the vector of the Hadamard state $\ket +$ lies exactly in the middle between the basis vectors $\ket 0$ and $\ket 1$.
-That means the state has equal probability to collapse to the $\ket 0$ or $\ket 1$ state.
+That means the state has an equal probability to collapse to the $\ket 0$ or $\ket 1$ state.
 
 
 \subsection{Hermitian matrix}
@@ -99,7 +99,7 @@ A &=  U D U^{\dagger} \\
 &= \begin{pmatrix} U_1 & \dots & U_n \end{pmatrix} \begin{pmatrix} \lambda_1 & 0 & 0 \\  0 & \ddots & 0\\ 0 & 0& \lambda_n \\ \end{pmatrix} \begin{pmatrix} U^\dagger_1 \\ \vdots \\ U^\dagger_n \end{pmatrix}
 \end{split}
 \end{equation}
-where $D$ is the diagonal matrix consisting of the eigenvalues and U consisting of eigenvectors of $A$.
+where $D$ is the diagonal matrix consisting of the eigenvalues and U consisting of the eigenvectors of $A$.
 With this, we can describe a matrix only by its eigenvectors and eigenvalues. 
 Similarly, we can also determine the inverse $A^{-1}$ by simply inverting the eigenvalues as such
 
@@ -115,14 +115,14 @@ Similarly, we can also determine the inverse $A^{-1}$ by simply inverting the ei
 
 
 Classically calculating the inverse matrice by inverting its eigenvalues is comparably slow. 
-Though in the quantum version, we will see, that this will play a big role in making our computation faster, as computing eigenvalues can by done efficiently by Quantum Phase Estimation (QPE).
+Though in the quantum version, we will see, that this will play a big role in making our computation faster, as computing eigenvalues can be done efficiently by Quantum Phase Estimation (QPE).
 
 \subsection{Types of Encoding}
 \label{sec:types-encoding}
-Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding and Amplitude encoding.
+Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding, and Amplitude encoding.
 
 \subsubsection{Hamiltonian Encoding}
-One type of Hamiltonian encoding is to encode a matrix into a unitary gate which can be implemented into logical quantum gate. 
+One type of Hamiltonian encoding is to encode a matrix into a unitary gate which can be implemented into a logical quantum gate. 
 That means we can encode a matrix $A$ into our quantum system.
 For example, a possible unitary gate of the matrix $A$ is
 \begin{equation}
@@ -181,7 +181,7 @@ This can be summarized in the Kronecker delta
 This can be quite useful in calculations with orthonormal bases.
 When calculating inner products of an orthonormal basis, whilst the indices are not equal, terms are multiplied by $0$ and will be cancle out, simplifying the equation.
 
-\subsection{Etangled states}
+\subsection{Entangled states}
 Entanglement is a physical property of quantum particles. 
 When particles are entangled, they cannot be described without considering the state of the other particle.
 Mathematically, entangled states can not be represented by a tensor product of individual states and are defined as such,

@@ -82,7 +82,7 @@ Now we can start with our procedure.
 
 \subsection{Numerical walkthrough}
 
-In Fig.~\ref{ex_circ_numerical} we can see that we have 1 qubit each for the a-register and b-register, corresponding to the ancilla bit and the intput $\vec b$.
+In Fig.~\ref{ex_circ_numerical} we can see that we have 1 qubit each for the a-register and b-register, corresponding to the ancilla bit and the input $\vec b$.
 The c-register has 2 qubits, as we have to store the two eigenvalues $\lambda_1$, $\lambda_2$ we calculated just now.
 Our starting state looks like this
 \begin{equation}
@@ -115,7 +115,7 @@ all registers being initalized with the zero state.
 \subsubsection{Quantum Phase Estimation}
     The QPE determines the eigenvalues $\lambda_j$ of the $A$ matrix. 
     These are stored in the c-register. 
-    The b-register now store $\ket b$ in the eigenbasis state of $A$ leading us to the following state
+    The b-register now stores $\ket b$ in the eigenbasis state of $A$ leading us to the following state
     \begin{equation}
     \ket{\Psi_2} = \ket{b}_b \ket{\widetilde{\lambda}}_c\ket{0}_a
     \end{equation}
@@ -160,7 +160,7 @@ all registers being initalized with the zero state.
     \ket{\Psi_4}=\frac{1}{2}\sqrt{\frac{2}{5}}  \left(\ket{0} +3 \ket{1} \right) \ket{00}_b \ket{1}_a
     \end{equation}
 
-\subsection{Measurment}
+\subsection{Measurement}
     Now we have to measure the solution state $\ket x$.
     In the beginning, we decided to take the probability ratio as our solution. 
     To get the probability of $\ket{u_0}$ and $\ket{u_1}$ we have to square their coefficients

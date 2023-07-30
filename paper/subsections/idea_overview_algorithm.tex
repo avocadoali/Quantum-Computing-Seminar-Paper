@@ -23,7 +23,7 @@ $A^{-1}$ can be represented in terms of its eigenvectors $U_1 ... U_n$ and inver
 \begin{pmatrix} U_1 & \dots & U_n \end{pmatrix} 
 \end{equation}
 
-This means, if we can find the eigenvalues and eigenvectors of $A$ we can then solve the linear equation quite easily. 
+This means if we can find the eigenvalues and eigenvectors of $A$ we can then solve the linear equation quite easily. 
 Classical solutions involving spectral decomposition are not faster than other standard algorithms, such as Gaussian Elimination. 
 Though, estimating eigenvalues and eigenvectors can be performed quite efficiently by quantum methods.
 Via amplitude amplification, QPE can be accelerated to generate the eigenvalues and eigenvectors in $\mathcal{O}(log_2 N)$ steps.
@@ -66,7 +66,7 @@ For the inverse $A^{-1}$, we can rewrite the formula in the following
 A^{-1} = \sum_{i=0}^{N-1} \lambda_i^{-1} \ket{u_i}\bra{u_i}
 \end{equation}
 
-Similary, $\ket b$ can be expressed in the eigenbasis of $A$ as 
+Similarly, $\ket b$ can be expressed in the eigenbasis of $A$ as 
 \begin{equation}
 \ket{b} = \sum_{j=0}^{N-1} b_j\ket{u_j}
 \end{equation}

@@ -16,13 +16,13 @@ The most commonly known method to solve a system of linear equations is Gaussian
 The time complexity of the Gaussian is $\mathcal{O} (N^3)$, being drastically slower than other classical methods.
 As we are only interested in an estimate of an expectation value $\bra x M \ket x$, we can take a look at similar classical methods, considering the constraints.
 
-In the following we will compare the HHL algorithm, to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency \cite{hhl}.
+In the following, we will compare the HHL algorithm, to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency \cite{hhl}.
 
 \subsection{Conjugate Gradient Descent}
 The classical conjugate gradient descent algorithm is a very common method for solving linear systems of equations. 
 It uses the conjugate direction method, which can locate the minimum of a function. 
 By iteratively looking for solution vectors, the procedure converges toward the solution of the linear system.
-This will provide us with a suitable benchmark for analyzing the efficiency of the HHL algorithm, since it also estimates a solution vector.
+This will provide us with a suitable benchmark for analyzing the efficiency of the HHL algorithm since it also estimates a solution vector.
 Not only is it one of the fastest classical algorithms, but also has a very similar constraint set and calculates similar results (eg. $\vec{x}^\dagger M \vec x$).
 
 \subsection{Comparison of Time Complexity }
@@ -55,8 +55,8 @@ Firstly, $\epsilon$ describes the accuracy of our desired solution.
 The sparseness $s$ describes to number of non-zero entries per row
 (e.g. a 2-sparse matrix only contains 2 non-zero entries per row).
 The condition number $\kappa$ describes how sensitive the output of a function is at the error of the input.
-That means, a function is well conditioned if the output of a function does not change by much if the errors in the input are big.
-These two factors are related to the QPE phase, since a unitary $e^{iAt}$ has to be generated. 
+That means, a function is well-conditioned if the output of a function does not change by much if the errors in the input are big.
+These two factors are related to the QPE phase since a unitary $e^{iAt}$ has to be generated. 
 This step heavily relies on the sparsity $s$ and conditioning $\kappa$ of the matrix $A$ to be performed efficiently.
 If not, this process would grow $\mathcal{O}(N^c)$ for some constant $c$.
 Again, this would omit our speedup of $\mathcal{O}(log(N))$.
