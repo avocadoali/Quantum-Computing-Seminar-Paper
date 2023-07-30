@@ -17,17 +17,17 @@ In vector form $\ket 0$ and $\ket 1$ are the defined by these vectors as such
   \ket 1  = \begin{pmatrix}0\\1\end{pmatrix}
 \end{equation}
 
-Graphically we can think of these two qubits $\ket 0$ and $\ket 1$ as two orthonormal vectors pointing upwards and to the right, having the length of 1.
+Graphically we can think of these two qubits $\ket 0$ and $\ket 1$ as two orthonormal vectors one pointing upwards and the other to the right, whilst having the length of 1.
 
 Multiple qubits can be combined to a quantum state often refered to as $\ket \Psi$, describing the state of a quantum computer. 
-For example, if we have a quantum computer with 4 qubits which are all initialized to the 0 state, $\ket \Psi$ would look as such
+For example, if we have a quantum computer with 4 qubits which are all initialized to the 0 state, where the state $\ket \Psi$ would look as such
 
 \begin{equation}
     \ket \Psi = \ket 0 \otimes \ket 0 \otimes \ket 0 \otimes \ket 0 = \ket{0000}
 \end{equation}
 where $\otimes$ is the tensor product, which is often times simplified into one state.
 
-The inner product of two vectors $\vec a$ and $\vec b$ is represented in braket notation as such 
+The inner product of two vectors $\vec a$ and $\vec b$ is represented in braket notation
 \begin{equation}
     \braket{a | b}
 \end{equation}
@@ -40,8 +40,8 @@ For example
 Note that the vectors contain complex numbers.
 
 \subsection{Superposition and Quantum Gate}
-As we already know qubits of a quantum computer can be in states \textit{between} 0 and 1. 
-These states are superpositions where a qubit is neither 0 nor 1.
+As we already know, qubits of a quantum computer can be in states \textit{between} 0 and 1. 
+These states are superpositions where a qubit is neither really 0 nor 1.
 Mathematically, superpositions can be represented by a linear combination of basis states. 
 The most common superposition is created by the Hadamard gate, which puts a basis state into an equal superposition. 
 Meaning, the probability of the qubit collapsing to either 0 or 1 is $\frac 1 2$.
@@ -60,8 +60,8 @@ Lets apply the Hadamard gate $H$ to the basis state $\ket 0$
     &=  \frac{1}{\sqrt{2}} (\ket 0 + \ket 1)  = \ket +
    \end{split}
 \end{equation}
-Graphically, the vector of the Hadamard state $\ket +$ lies exactly between the basis vectors $\ket 0$ and $\ket 1$.
-That means the state has equal probability to collapse to the $\ket 0$ and $\ket 1$ state.
+Graphically, the vector of the Hadamard state $\ket +$ lies exactly in the middle between the basis vectors $\ket 0$ and $\ket 1$.
+That means the state has equal probability to collapse to the $\ket 0$ or $\ket 1$ state.
 
 
 \subsection{Hermitian matrix}
@@ -87,7 +87,8 @@ A &= \begin{bmatrix} 2 & 1-i \\ 1+i & 3 \\ \end{bmatrix} \\
 \end{equation}
 
 Hermitian matrices are important as we can easily encode them into quantum systems.
-More details will follow in the subsection for types of encoding.
+More details will follow in the subsection types of encoding \ref{sec:types-encoding}.
+
 
 \subsection{Spectral Decomposition}
 Let's say we have a Matrix $A$ that we can diagonalize. 
@@ -117,6 +118,7 @@ Classically calculating the inverse matrice by inverting its eigenvalues is comp
 Though in the quantum version, we will see, that this will play a big role in making our computation faster, as computing eigenvalues can by done efficiently by Quantum Phase Estimation (QPE).
 
 \subsection{Types of Encoding}
+\label{sec:types-encoding}
 Here we will discuss three common kinds of encodings namely, Hamiltonian encoding, Basis encoding and Amplitude encoding.
 
 \subsubsection{Hamiltonian Encoding}

@@ -17,13 +17,13 @@ We will now discuss some examples that utilize the algorithm.
     Thus, systems can be modeled as a graph which correspond to large sparse matrices.
     By being able to calculate the inverse of a matrix $A^{-1}$ efficienly, we can deduct many network properties, such as resistance. 
     This can help us to further optimize the electrical powersystem.
-    Conventionally, we would have to rely on iterative algorithms, which are as we saw earlier, exponentially slower in this specific case.
+    Conventionally, we would have to rely on iterative algorithms, which are as we saw earlier, exponentially slower in this specific case \cite{electrical_networks}.
     
     \subsubsection{Machine Learning (Least-Square Estimation)}
     In the field of machine learning the HHL algorithm can also massively improve calculations. 
     The HHL algorithm also plays a significant role in the field of machine learning, as it can improve computational intensive calculations.
     For example in least-square estimation, the HHL algorithm can be used to determine estimates of inverse matrices. 
-    This can be very helpful in data fitting tasks, enabling efficient parameter estimation and model optimization.
+    This can be very helpful in data fitting tasks, enabling efficient parameter estimation and model optimization \cite{data_fitting}.
     
 All in all, finding more applications for the HHL algorithm is crucial, given its specific constraints and promising capabilities.
 
@@ -35,12 +35,12 @@ We will now discuss some examples of improvements done to the HHL algorithm.
     \subsubsection{Ancilla Bit Requirement} 
     Certain variants allow the HHL algorithm to operate without an ancilla bit.
     This eliminates the probability of failure in the rotation step of the eigenvalues, which leads to a faster walkthrough, as one must not repeat the process mutliple times at failure.
-    Additionally, this increases the reliability of the algorithm.
+    Additionally, this increases the reliability of the algorithm \cite{without_ancilla}.
 
     \subsubsection{QRAM}
     Quantum Random Access Memory (QRAM) is the quantum computer equivalent of the classical ram in a computer.
-    It enables the the quantum computer to directly access quantum states for computation without having to encode the input. 
-    This would provide us with a very efficient way to load our state $\ket b$ into our quantum circuit.
+    It enables the the quantum computer to directly access quantum states for computation witheut having to encode the input. 
+    This would provide us with a very efficient way to load our state $\ket b$ into our quantum circuit \cite{qram}.
 
 Exploring these variations and identifying novel optimizations can contribute to the advancement and practical implementation of the HHL algorithm.
 

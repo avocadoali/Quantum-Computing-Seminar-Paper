@@ -16,7 +16,7 @@ The most commonly known method to solve a system of linear equations is Gaussian
 The time complexity of the Gaussian is $\mathcal{O} (N^3)$, being drastically slower than other classical methods.
 As we are only interested in an estimate of an expectation value $\bra x M \ket x$, we can take a look at similar classical methods, considering the constraints.
 
-In the following we will compare the HHL algorithm, to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency.
+In the following we will compare the HHL algorithm, to the classical conjugate gradient descent algorithm, focusing on time complexity and other factors that impact its efficiency \cite{hhl}.
 
 \subsection{Conjugate Gradient Descent}
 The classical conjugate gradient descent algorithm is a very common method for solving linear systems of equations. 
@@ -66,7 +66,7 @@ Furthermore, the accuracy $\epsilon$ is exponentially worse in the HHL algorithm
 Thus, in terms of sparsity, accuracy and condition number, the HHL algorithm has a worse runtime than the conjugate gradient descent algorithm.
 If these prefactors were not worse than in the classical solution, this would have bizarre implications. 
 We are able to show that if the dependency of these factors is better or equal as in the classical solution, we could solve \textit{NP-Complete} problems exponentially faster on quantum computers, which seems unlikely.
-All in all, these constraints are important to consider when choosing applications, as they have a great effect on the runtime. 
+All in all, these constraints are important to consider when choosing applications, as they have a great effect on the runtime \cite{fineprint}.
 
 
 \subsection{Resource requirements}
